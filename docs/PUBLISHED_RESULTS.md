@@ -1,6 +1,8 @@
 # Published reference results (Sept 2026)
 
-Optional target. A valid reproduction does **not** require matching these numbers — it requires matching lockfile hashes and question objects.
+Canonical narrative (charts + markdown tables): root **[`README.md`](../README.md)**.
+
+Optional target numbers only — a valid reproduction does **not** require matching these; it requires matching lockfile hashes and question objects.
 
 ## Accuracy
 
@@ -24,6 +26,6 @@ Optional target. A valid reproduction does **not** require matching these number
 
 ## Notes
 
-- Jev metered spend for the published A/B ≈ **$0.48** at $0.042 / 1M input.  
-- On-prem arms measured on a ~$350 Lenovo IdeaPad Slim 3 (i3-N305, 8 GB, no GPU).  
+- Jev metered spend for the published A/B ≈ **$0.48** at $0.042 / 1M input.
+- On-prem arms measured on a ~$350 Lenovo IdeaPad Slim 3 (i3-N305, 8 GB, no GPU).
 - Training honesty: Jev/Laya cold; Flybrain ridge head on train only.
