@@ -6,7 +6,7 @@ venv/
 .env.*
 *.pass
 .DS_Store
-data/
+/data/
 runs/
 vectors/
 *.egg-info/
