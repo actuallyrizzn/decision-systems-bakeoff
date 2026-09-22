@@ -2,7 +2,7 @@
 
 **Reproduce the three-arm decision bakeoff:** Flybrain · Jev · Laya on the same frozen public rows.
 
-This repo is the **prescription** — locked questions, locked test checksums, scoring contract, and runners for the hosted (Jev) and open-weight (Laya) arms. The Flybrain arm is documented here and implemented in [`fly-cast`](https://github.com/actuallyrizzn/fly-cast); you can also drop any system’s predictions as JSONL and re-score.
+This repo is the **prescription and the runners** — locked questions, locked test checksums, scoring contract, Jev/Laya arms, and an **in-repo Flybrain** arm (larva connectome + ridge head). You can also drop any system’s predictions as JSONL and re-score.
 
 Published writeup (context, not required to run): Decision Science Corp blog *Same questions, three decision systems*.
 
@@ -21,7 +21,7 @@ Arms:
 
 1. **Jev** — Venice `jev-latest` via `POST /api/v1/decisions`
 2. **Laya** — `convaiinnovations/laya` on your machine (multilingual long-window for clinc150)
-3. **Flybrain** — larva connectome readout (see `docs/FLYBRAIN.md`)
+3. **Flybrain** — larva connectome readout (`scripts/run_flybrain.py`, `docs/FLYBRAIN.md`)
 
 ---
 
@@ -44,10 +44,12 @@ python scripts/run_arm.py --data "$BAKEOFF_DATA" --out runs/jev --task sst2 --ar
 # 3b) Laya arm (needs `pip install laya` / ConvAI package)
 python scripts/run_arm.py --data "$BAKEOFF_DATA" --out runs/laya --task sst2 --arm laya
 
-# 3c) Flybrain — produce prediction JSONL (fly-cast), then:
-python scripts/score_predictions.py \
-  --data "$BAKEOFF_DATA" --task sst2 --arm flybrain \
-  --predictions runs/flybrain/flybrain_sst2_rows.jsonl
+# 3c) Flybrain (once: python scripts/fetch_glove.py --dir vectors)
+python scripts/run_flybrain.py \
+  --data "$BAKEOFF_DATA" \
+  --glove vectors/glove.6B.100d.txt \
+  --out runs/flybrain \
+  --task sst2
 
 # 4) Merge summaries
 python scripts/make_report.py --runs runs --out runs/report.json
@@ -61,6 +63,10 @@ Smoke fixtures under `fixtures/smoke/` are **not** the locked bakeoff hashes. Us
 python scripts/run_arm.py \
   --data fixtures/smoke --out runs/smoke --task sst2 --arm jev \
   --limit 2 --skip-verify
+
+python scripts/run_flybrain.py \
+  --data fixtures/smoke --glove fixtures/smoke/glove.mini.txt \
+  --out runs/smoke-fly --task sst2 --limit 4 --skip-verify
 ```
 
 ---
@@ -70,16 +76,21 @@ python scripts/run_arm.py \
 | Path | Role |
 |---|---|
 | `lockfile.json` | Bakeoff id, arm definitions, per-task row counts + **test sha256** |
+| `configs/flybrain_best.json` | Locked Flybrain hyperparameters per task |
 | `questions/` | Frozen decision objects (byte-stable menus) |
+| `src/decision_bakeoff/flybrain/` | Connectome + reservoir + ridge arm (AGPL) |
 | `scripts/verify_data.py` | Gate: mismatch hash → exit 1 |
 | `scripts/run_arm.py` | Jev / Laya runners → `*_summary.json` + `*_rows.jsonl` |
+| `scripts/run_flybrain.py` | Flybrain runner |
+| `scripts/fetch_glove.py` | Download GloVe 6B 100d |
 | `scripts/score_predictions.py` | Score any arm’s JSONL against gold |
 | `scripts/make_report.py` | Merge summaries |
 | `docs/PROTOCOL.md` | Human protocol (do not edit mid-run; amend with a dated note) |
 | `docs/PREDICTION_SCHEMA.md` | JSONL row schema |
-| `docs/FLYBRAIN.md` | How to run / import the connectome arm |
+| `docs/FLYBRAIN.md` | Flybrain arm details |
 | `docs/FETCH_DATA.md` | How to rebuild the frozen corpora |
 | `docs/PUBLISHED_RESULTS.md` | Our Sept 2026 reference scoreboard |
+| `LICENSING.md` | MIT harness vs AGPL flybrain vs CC-BY data |
 
 ---
 
@@ -106,4 +117,4 @@ See `docs/PREDICTION_SCHEMA.md`. Brier and accuracy are recomputed from `choice`
 
 ## License
 
-Code: MIT (see `LICENSE`). Datasets retain their upstream licences (see lockfile + `docs/FETCH_DATA.md`).
+Orchestration: MIT (see `LICENSE`). Flybrain package: AGPL-3.0-or-later. Connectome CSVs: CC-BY. Details: `LICENSING.md`. Datasets retain their upstream licences (see lockfile + `docs/FETCH_DATA.md`).

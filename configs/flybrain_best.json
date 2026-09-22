@@ -1,0 +1,50 @@
+{
+  "note": "Validation-grid winners from fly-cast jevlab runs (seed0 cfg key). Graph frozen; ridge head fit on train/val at run time.",
+  "packet_cap": 64,
+  "glove": {
+    "file": "glove.6B.100d.txt",
+    "dim": 100
+  },
+  "tasks": {
+    "sst2": {
+      "leak": 0.3,
+      "steps": 2,
+      "radius": 0.7,
+      "inject_count": 128,
+      "input_scale": 0.5,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "l0.3_s2_r0.7_i128_x0.5_plastmean_seed0"
+    },
+    "clinc10": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "l0.3_s4_r0.9_i128_x2.0_plastmean_seed0"
+    },
+    "clinc150": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "l0.3_s4_r0.9_i128_x2.0_plastmean_seed0"
+    },
+    "bugsev": {
+      "leak": 0.5,
+      "steps": 1,
+      "radius": 0.7,
+      "inject_count": 128,
+      "input_scale": 0.5,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "l0.5_s1_r0.7_i128_x0.5_plastmean_seed0"
+    }
+  }
+}

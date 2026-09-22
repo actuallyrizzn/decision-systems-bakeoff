@@ -1,40 +1,50 @@
 # Flybrain arm
 
-This bakeoff’s Flybrain arm is a **ridge classification head** on features from the published fruit-fly larva connectome (Winding et al., *Science* 2023). The graph stays frozen. Train/val fit the head; test is scored once.
+In-repo implementation under `src/decision_bakeoff/flybrain/` — frozen Science 2023 larva connectome, GloVe projection, sparse-CSR reservoir, ridge + temperature head. Hyperparameters locked in `configs/flybrain_best.json` (validation-grid winners from the published jevlab runs).
 
-## Option A — fly-cast (canonical implementation)
-
-1. Clone and install https://github.com/actuallyrizzn/fly-cast  
-2. Follow `tools/jevlab/README.md` / `docs/jevlab/PROTOCOL.md` for the readout recipe (grid on validation, never touch test during tuning).  
-3. Export or convert scored test predictions into this repo’s JSONL schema (`docs/PREDICTION_SCHEMA.md`).  
-4. Score:
+## Run (canonical for this bakeoff)
 
 ```bash
-python scripts/score_predictions.py \
+# once: GloVe 6B 100d (~822 MB extracted)
+python scripts/fetch_glove.py --dir vectors
+
+export BAKEOFF_DATA=~/path/to/locked/jevlab/data
+python scripts/verify_data.py --data "$BAKEOFF_DATA"
+
+python scripts/run_flybrain.py \
   --data "$BAKEOFF_DATA" \
-  --task sst2 \
-  --arm flybrain \
-  --predictions path/to/flybrain_sst2_rows.jsonl
+  --glove vectors/glove.6B.100d.txt \
+  --out runs/flybrain \
+  --task sst2
 ```
 
-Record the fly-cast commit SHA in your run notes.
+Writes `runs/flybrain/flybrain_<task>_summary.json` and `*_rows.jsonl`. Re-score with `score_predictions.py` if you want an independent pass over the JSONL.
 
-## Option B — bring your own connectome readout
+### Smoke (mini GloVe + fixtures; not locked hashes)
 
-Any system is allowed if it:
+```bash
+python scripts/run_flybrain.py \
+  --data fixtures/smoke \
+  --glove fixtures/smoke/glove.mini.txt \
+  --out runs/smoke-fly \
+  --task sst2 \
+  --limit 4 \
+  --skip-verify
+```
 
-1. Uses the **same locked** `test.tsv` (verify_data green)  
-2. Uses the **same** decision menu / label names  
-3. Emits prediction JSONL with probabilities over the full menu  
-4. Documents training: what saw train/val vs test  
+## What stays frozen
 
-Then `score_predictions.py` is the scorer of record for this bakeoff repo.
+| Piece | Rule |
+|---|---|
+| Connectome layout | Bundled `flybrain/data/*.csv.gz` — who connects to whom |
+| Test rows | `lockfile.json` sha256 via `verify_data.py` |
+| Arm hyperparameters | `configs/flybrain_best.json` per task |
+| Train/val | Fit ridge λ + temperature only; never tune on test |
 
-## What “Flybrain” meant in the published piece
+## Provenance
 
-- Body: Science 2023 larva connectome (~3k neurons / ~117k edges)  
-- Text → GloVe → reservoir on frozen wiring → pooled features  
-- Thin ridge head + temperature on validation  
-- Hardware reference: CPU laptop, no GPU required for the published run  
+- Body: Winding et al., *Science* 2023 larva connectome (CC-BY via Netzschleuder)  
+- Stack: vendored from [fly-cast](https://github.com/actuallyrizzn/fly-cast) jevlab / lab2 (AGPL — see `LICENSING.md`)  
+- Hardware reference for published ms: CPU laptop, no GPU  
 
-Do not describe a transformer fine-tune as “Flybrain” under this bakeoff id.
+Do not describe a transformer fine-tune as “Flybrain” under bakeoff id `flybrain-jev-laya-2026-09`.

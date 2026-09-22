@@ -21,7 +21,8 @@
       "kind": "connectome_readout",
       "body": "Winding et al. Science 2023 larva connectome",
       "training": "ridge_head_on_train_only_graph_frozen",
-      "implementation": "see docs/FLYBRAIN.md (fly-cast) or drop prediction JSONL"
+      "implementation": "src/decision_bakeoff/flybrain + scripts/run_flybrain.py; configs/flybrain_best.json",
+      "license": "AGPL-3.0-or-later (code); CC-BY (connectome CSVs)"
     }
   },
   "tasks": {
