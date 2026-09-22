@@ -1,0 +1,10 @@
+{
+  "sentiment": {
+    "type": "choice",
+    "instructions": "What is the sentiment of this sentence?",
+    "criteria": {
+      "negative": "The sentence expresses negative sentiment.",
+      "positive": "The sentence expresses positive sentiment."
+    }
+  }
+}

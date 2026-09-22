@@ -1,0 +1,67 @@
+{
+  "task": "clinc10",
+  "source_url": "smoke slice of the frozen ngram split",
+  "licence": "same as the parent task",
+  "seed": 7,
+  "notes": "400 train / 50 valid / 50 test, stratified, seed 7.",
+  "created_at": "2026-09-19 00:57 UTC",
+  "files": [
+    {
+      "name": "train.tsv",
+      "sha256": "9b10b646c4f1df7219d74aa82969cbbbdf242828dbe2dda7053ea058d7425703",
+      "rows": 400,
+      "label_counts": {
+        "8": 40,
+        "7": 40,
+        "3": 40,
+        "6": 40,
+        "1": 40,
+        "2": 40,
+        "0": 40,
+        "4": 40,
+        "9": 40,
+        "5": 40
+      },
+      "mean_tokens": 7.022,
+      "max_tokens": 17
+    },
+    {
+      "name": "valid.tsv",
+      "sha256": "1e41985033017ea8f9cf132f5b2bf04a690b808128c49188702f156c97a6dec6",
+      "rows": 50,
+      "label_counts": {
+        "8": 5,
+        "7": 5,
+        "3": 5,
+        "6": 5,
+        "1": 5,
+        "2": 5,
+        "0": 5,
+        "4": 5,
+        "9": 5,
+        "5": 5
+      },
+      "mean_tokens": 6.6,
+      "max_tokens": 13
+    },
+    {
+      "name": "test.tsv",
+      "sha256": "00341ca3e7f2b920087d8fef31bf715410b1bbb4a41ed69d79886750bac1ae19",
+      "rows": 50,
+      "label_counts": {
+        "8": 5,
+        "7": 5,
+        "3": 5,
+        "6": 5,
+        "1": 5,
+        "2": 5,
+        "0": 5,
+        "4": 5,
+        "9": 5,
+        "5": 5
+      },
+      "mean_tokens": 6.6,
+      "max_tokens": 17
+    }
+  ]
+}

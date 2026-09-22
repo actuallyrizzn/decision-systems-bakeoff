@@ -1,0 +1,66 @@
+{
+  "bakeoff_id": "flybrain-jev-laya-2026-09",
+  "title": "Same questions, three decision systems",
+  "kpis": ["accuracy", "brier", "median_seconds", "n_scored", "n_planned", "finishability"],
+  "arms": {
+    "jev": {
+      "kind": "hosted_decision_api",
+      "vendor": "Venice",
+      "model": "jev-latest",
+      "endpoint": "https://api.venice.ai/api/v1/decisions",
+      "training": "none_cold"
+    },
+    "laya": {
+      "kind": "open_weight_decision",
+      "vendor": "ConvAI",
+      "checkpoint": "convaiinnovations/laya",
+      "training": "none_cold",
+      "notes": "English for short tasks; multilingual subfolder + max_len=4096/head_max_len=2048 for clinc150"
+    },
+    "flybrain": {
+      "kind": "connectome_readout",
+      "body": "Winding et al. Science 2023 larva connectome",
+      "training": "ridge_head_on_train_only_graph_frozen",
+      "implementation": "see docs/FLYBRAIN.md (fly-cast) or drop prediction JSONL"
+    }
+  },
+  "tasks": {
+    "sst2": {
+      "rows_test": 872,
+      "test_sha256": "c5d4733f9738b084e064836d98a27c7ddedc9bd3d8571a39fffb2d30eedd4005",
+      "qid": "sentiment",
+      "source": "https://dl.fbaipublicfiles.com/glue/data/SST-2.zip",
+      "licence": "GLUE/SST-2, research use"
+    },
+    "clinc10": {
+      "rows_test": 300,
+      "test_sha256": "a229dfd59e5254930cc1053af12057ea00b5ce306666dac002562c759deb97fe",
+      "qid": "intent",
+      "source": "https://raw.githubusercontent.com/clinc/oos-eval/master/data/data_full.json",
+      "licence": "CC-BY-3.0"
+    },
+    "clinc150": {
+      "rows_test": 5500,
+      "test_sha256": "a29710b72717f17a2514df8e9a5dfc5b37dbeb5ca1ee22f2b25fbd4a17918441",
+      "qid": "intent",
+      "source": "https://raw.githubusercontent.com/clinc/oos-eval/master/data/data_full.json",
+      "licence": "CC-BY-3.0"
+    },
+    "bugsev": {
+      "rows_test": 2000,
+      "test_sha256": "6715545ae7b01661bc1ff3bfafff476098061aedbd98832aeacf2972b9c023a6",
+      "qid": "severity",
+      "source": "https://github.com/ansymo/msr2013-bug_dataset",
+      "licence": "Cite Lamkanfi, Perez, Demeyer, MSR 2013 (no licence file in upstream)"
+    }
+  },
+  "jev_pricing": {
+    "input_usd_per_mtok": 0.042,
+    "output_usd_per_mtok": 0.0,
+    "usd_stop_default": 1.0
+  },
+  "published_reference": {
+    "note": "Our Sept 2026 published scoreboard — optional target, not a pass criterion for a valid re-run.",
+    "doc": "docs/PUBLISHED_RESULTS.md"
+  }
+}

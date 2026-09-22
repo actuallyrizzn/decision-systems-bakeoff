@@ -1,0 +1,46 @@
+{
+  "task": "bugsev",
+  "source_url": "smoke slice of the frozen ngram split",
+  "licence": "same as the parent task",
+  "seed": 7,
+  "notes": "400 train / 50 valid / 50 test, stratified, seed 7.",
+  "created_at": "2026-09-19 00:57 UTC",
+  "files": [
+    {
+      "name": "train.tsv",
+      "sha256": "90e71b63d3cdee4e21838bf421fd58afe929d2602e0d8983b25c5eb348013c68",
+      "rows": 400,
+      "label_counts": {
+        "2": 58,
+        "0": 28,
+        "1": 314
+      },
+      "mean_tokens": 10.447,
+      "max_tokens": 44
+    },
+    {
+      "name": "valid.tsv",
+      "sha256": "b8b469c7cdb81372aac5e76a5f51cf477300c86f9b9b8fd91fa2668f98420063",
+      "rows": 50,
+      "label_counts": {
+        "2": 7,
+        "1": 39,
+        "0": 4
+      },
+      "mean_tokens": 10.04,
+      "max_tokens": 22
+    },
+    {
+      "name": "test.tsv",
+      "sha256": "ac829ee7ce12b4115ce9a3f08a4b6cfc8e815a3124b6782e8090ba5859d7ff71",
+      "rows": 50,
+      "label_counts": {
+        "2": 7,
+        "1": 39,
+        "0": 4
+      },
+      "mean_tokens": 9.44,
+      "max_tokens": 24
+    }
+  ]
+}

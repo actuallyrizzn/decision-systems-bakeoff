@@ -1,0 +1,18 @@
+{
+  "intent": {
+    "type": "choice",
+    "instructions": "Which of these intents does the utterance express?",
+    "criteria": {
+      "alarm": "alarm",
+      "calculator": "calculator",
+      "date": "date",
+      "definition": "definition",
+      "measurement_conversion": "measurement_conversion",
+      "spelling": "spelling",
+      "time": "time",
+      "timer": "timer",
+      "translate": "translate",
+      "weather": "weather"
+    }
+  }
+}

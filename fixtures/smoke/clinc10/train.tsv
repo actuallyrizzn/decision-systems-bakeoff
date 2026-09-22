@@ -1,0 +1,401 @@
+id	text	label
+train-1	can you tell me how to say 'i do not speak much spanish', in spanish	8
+train-7	please tell me how to ask for a taxi in french	8
+train-9	what is the correct way to say 'i am a visitor' in french	8
+train-10	how would i say, 'i don't know the answer' in spanish	8
+train-15	i would like to know how to say hello in french	8
+train-18	how do you say hi in french	8
+train-20	translate hello in french	8
+train-21	how is hello said in french	8
+train-22	what do you call a subway if you were english	8
+train-24	how should i say hello in french	8
+train-28	translate hello to english	8
+train-35	how do vietnameses people say hello	8
+train-41	what is hello in french	8
+train-44	translate hello to french	8
+train-47	how do they say goodbye in hawaii	8
+train-51	what do i say for goodbye in hawaii	8
+train-52	translate hello into french for me	8
+train-56	what is spanish for hello	8
+train-57	how would i say hello in french	8
+train-62	do you know how to say where is the restroom in french	8
+train-63	how would i say pleased to meet you if i were japanese	8
+train-67	how would i say goodbye if i were norwegian	8
+train-68	how would i say i love you if i were french	8
+train-69	how would i say hello if i were swedish	8
+train-70	can you translate good bye into russian for me	8
+train-71	can you translate i have to go pee into korean for me	8
+train-72	how would i say i'm not guilty if i were mexican	8
+train-74	how does one say thank you in spanish	8
+train-79	how do they say "where's the bathroom" in spanish	8
+train-81	how do they say "i love you" in japanese	8
+train-82	how do they say "what's up" in chinese	8
+train-84	how do you say please in arabic	8
+train-85	how do you say cat in spanish	8
+train-86	how do you say i'm hungry in french	8
+train-87	how do you say i need coffee in dutch	8
+train-89	can you translate cat into russian for me	8
+train-90	can you translate bowl into russian for me	8
+train-92	i wanna know a phrase in spanish	8
+train-93	can you translate bat into russian for me	8
+train-97	how do they say hello in germany	8
+train-204	i need to set the timer for two minutes	7
+train-205	can you set a timer for me for fifteen minutes starting now	7
+train-211	i want a timer set	7
+train-212	remind me in (x) hours	7
+train-215	please set a timer for me	7
+train-216	i need a 10 minute timer	7
+train-217	i wish to have a 10 minute timer	7
+train-221	i want a 10 minute timer	7
+train-222	i gotta set a timer	7
+train-223	set a 10 minute timer	7
+train-226	i must set a timer	7
+train-235	can u please set the timer for 5 minutes	7
+train-238	set a one hour timer	7
+train-239	please set a timer for 20 minutes	7
+train-241	set a timer for two hours	7
+train-242	can you set a two hour timer	7
+train-244	you need to set the timer for me	7
+train-245	i need you to set timer for me	7
+train-246	please set the timer for me	7
+train-249	i need you to set a time	7
+train-250	i need a timer set for 15 minutes	7
+train-252	set a timer for 15 minutes	7
+train-254	let's get a timer set for 5 minutes	7
+train-255	set a timer for 35 minutes	7
+train-257	let's get a timer going for 10 minutes	7
+train-258	i need a timer for 20 seconds	7
+train-261	give me a 10 minute countdown	7
+train-263	i'm cooking an egg, timer for 3 mins	7
+train-269	create a timer for me	7
+train-271	i need to set a timer	7
+train-272	set up a timer	7
+train-274	lets set a timer for me	7
+train-278	set a seven minute timer	7
+train-279	start a timer for me	7
+train-283	i want a timer for 5 minutes	7
+train-284	timer for 5 minutes	7
+train-291	set an alarm for nine minutes from now	7
+train-294	want 5 minute timer	7
+train-298	can you please the timer	7
+train-299	will you set the timer	7
+train-300	what is the meaning of realism	3
+train-306	what is let it be mean	3
+train-308	what is the meaning of stupendous	3
+train-312	what is the meaning of hyperactive	3
+train-314	what is stupedous meant	3
+train-315	find the meaning of qat	3
+train-316	what the heck is qat	3
+train-317	define qat for me	3
+train-319	look up qat please	3
+train-320	what might the meaning of altruism be	3
+train-324	what is the meaning of altruism	3
+train-325	affiliate's definition is what	3
+train-326	the definition of affiliate is	3
+train-328	what's affiliate definition	3
+train-330	whats the definition of poor	3
+train-332	what does "money" mean	3
+train-333	tell me what the word die means	3
+train-336	what does tertiary mean	3
+train-342	use the word ataraxy in a sentence	3
+train-349	what's the definition of analogy	3
+train-351	definition of anachronism	3
+train-352	what's the definition of patriarchy	3
+train-354	please share the definition of episcopalian	3
+train-357	define thoroughbred	3
+train-362	what is the definition of flange	3
+train-366	what is the meaning of flange	3
+train-370	where i can use word "rescind	3
+train-372	what does ajar mean	3
+train-374	tell me what monstrosity means	3
+train-380	do you know what calumny means  please look it up for me	3
+train-382	tell me what edict means	3
+train-384	can you tell me what dirge means	3
+train-386	whats the definition of transmute	3
+train-388	what is meant by defense	3
+train-391	define zesty	3
+train-394	what is the definition of zesty	3
+train-395	what does zesty mean	3
+train-397	what does alternative mean	3
+train-398	give me the meaning of alternative	3
+train-399	tell me the meaning of alternative	3
+train-1407	let me know the current time in the central timezone	6
+train-1408	tell me what time it is in the central timezone	6
+train-1410	what is the time right now in the hst timezone	6
+train-1411	can you tell me the current time	6
+train-1413	i need to know what time it is in florida	6
+train-1415	in the mst time zone, what time is it right now	6
+train-1417	can you tell me the current time in the pacific timezone	6
+train-1419	what is the current est time	6
+train-1423	what time would it be in rome right now	6
+train-1425	what's the time set to in florida right now	6
+train-1426	what time is it currently in istanbul	6
+train-1429	current time, please	6
+train-1431	can you give me the time	6
+train-1432	please let me know what time it is	6
+train-1436	what is the exact time	6
+train-1440	what time is it exactly	6
+train-1441	what is the time now	6
+train-1444	what is the time in sydney, australia	6
+train-1445	what time is it in honolulu	6
+train-1448	what time is it on the pacific coast right now	6
+train-1454	what time is it in the eastern standard timezone	6
+train-1456	what time is it in the alaska standard timezone	6
+train-1458	what time is it in the mountain standard timezone	6
+train-1460	at the moment what is the time	6
+train-1462	what time is it now	6
+train-1466	what is the current time in new york	6
+train-1469	what time is it in north korea	6
+train-1470	what does it say on the clock	6
+train-1472	in tokyo, what time is it	6
+train-1479	i would like to know the time	6
+train-1482	in the eastern timezone, what time is it now	6
+train-1484	what's the current time now cst	6
+train-1485	in pacific time, what's the current time	6
+train-1487	what is the current time, please	6
+train-1489	what is the time, please	6
+train-1490	how is the time	6
+train-1492	what time is it in london	6
+train-1494	what time is it in paris	6
+train-1497	what's the time in anchorage timezone	6
+train-1498	in bst timezone, what time is it	6
+train-5803	can you tell me what 30% off 279 is	1
+train-5805	what is the sum of 3 plus 5	1
+train-5806	could you tell me what 30% off 235 is, please	1
+train-5809	what is the sum of 10 plus 5	1
+train-5812	what is an 18 percent tip on 20 dollars	1
+train-5813	what is 25 percent of 6999	1
+train-5816	i need to know what is 85% of $1500	1
+train-5818	what is 55 times 300	1
+train-5820	will you help me with a math problem	1
+train-5829	what is 10 + 20	1
+train-5833	what is 15% of 3143	1
+train-5834	what is the square root of 10294	1
+train-5835	how many square feet is a 13 by 74 room	1
+train-5836	what is three quarters of one sixth	1
+train-5838	what is the square root of 144	1
+train-5839	what is the antilog of 365	1
+train-5840	what is 78 times 85	1
+train-5841	what is 250 times 118 times 9	1
+train-5845	i need you to help me with some math if you can	1
+train-5849	what is 1 million twelve hundred divided by 400 thousand	1
+train-5850	what is the square root of 10500	1
+train-5853	how much is 50 plus 756	1
+train-5854	what is 750 divided by 5	1
+train-5856	what is 900 times 8	1
+train-5857	can you tell me what 80 divided buy 4 is	1
+train-5858	560 divided by 3	1
+train-5861	what is 005 percent of 1 percent	1
+train-5863	what is six divided by 16	1
+train-5870	what is 1/2 times 5/8	1
+train-5877	what is 2/3 x 1/9	1
+train-5879	what is 1 fifth times 2 fifths	1
+train-5881	what's ten times eight	1
+train-5883	what do you get if you divide 3 by 2	1
+train-5885	subtract 85 from 997	1
+train-5887	what is the square root of 2784	1
+train-5888	how many times does 8 go into 2000	1
+train-5890	what is 3 to the 6th power	1
+train-5893	what is the square root of 104	1
+train-5896	please provide the square root of 36	1
+train-5897	what does 6 x 1 equal	1
+train-5902	tell me what date it is please	2
+train-5903	tell me what day today is	2
+train-5904	can you tell me tomorrow's date	2
+train-5905	what is the date for tomorrow	2
+train-5909	what day will it be in fourteen days	2
+train-5912	what day is it gonna be in twenty-one days	2
+train-5916	can you tell me the date today	2
+train-5917	please share today's date	2
+train-5919	what day is it	2
+train-5926	what is the date tomorrow, please	2
+train-5929	what is today's month, day and year	2
+train-5932	could you tell me today's date	2
+train-5935	what is the date today	2
+train-5936	today's date is what exactly	2
+train-5937	please tell me what date it is today	2
+train-5941	tell me the date today	2
+train-5943	in 2 days, what date will it be	2
+train-5947	what's the date tomorrow	2
+train-5948	i need to know what date it is tomorrow	2
+train-5949	in 100 days from now, what will be the date	2
+train-5959	what is today	2
+train-5961	what's the day today	2
+train-5963	what's the date 400 days from now	2
+train-5967	what will the date be 100 days from now	2
+train-5969	what day will it be 373 days from now	2
+train-5970	i need to know the date in 256 days	2
+train-5975	what's today's date	2
+train-5977	show me a calendar	2
+train-5979	i need the full date for today	2
+train-5980	what day of the month is it	2
+train-5982	tomorrow, what will the date be	2
+train-5983	tell me what the date is for tomorrow	2
+train-5985	what is tomorrow's date	2
+train-5989	tell me tomorrow's date	2
+train-5990	the date tomorrow is what	2
+train-5991	when will it be in 10 days	2
+train-5992	what day is it tomorrow	2
+train-5993	what's the current date	2
+train-5996	can you tell me the date	2
+train-5999	what's today	2
+train-7300	wake me up at noon tomorrow	0
+train-7303	please set an alarm for mid day	0
+train-7309	please set alarm for me	0
+train-7310	make a new alarm for 6 in the morning	0
+train-7315	i'd like a new alarm set for 6am	0
+train-7320	i want to make an alarm	0
+train-7321	i would like an alarm set	0
+train-7323	i need an alarm set	0
+train-7324	i need alarms set for 6am and 615am	0
+train-7328	set one alarm for 215pm and another for 7pm	0
+train-7333	please set up an alarm to go off tomorrow at daybreak	0
+train-7337	please turn on the alarm	0
+train-7338	set my alarm for 6am tomorrow	0
+train-7339	set alarm for 6am	0
+train-7342	set alarm for 5pm	0
+train-7343	make an alarm 6am	0
+train-7345	put in an alarm for 5pm	0
+train-7347	set my alarm for 5pm	0
+train-7350	set alarm	0
+train-7351	i need an alarm to wake me up at 8 tomorrow morning	0
+train-7353	please set an alarm for 5 am	0
+train-7355	i need an alarm set for 6 in the morning	0
+train-7357	set an alarm for me for 10:00 and another one set for 4:00	0
+train-7360	assist me by setting my alarm for 9:00 and another for 11:00	0
+train-7361	tomorrow i need an alarm at 7 tomorrow	0
+train-7362	at 9 tomorrow, set off the alarm	0
+train-7363	tomorrow i would like an alarm for 9 tomorrow	0
+train-7366	set reminder for 2 pm	0
+train-7367	wake me up at 6 am	0
+train-7374	i need an alarm at 8 pm	0
+train-7375	set an alarm to start work and another to stop	0
+train-7376	set an alarm to go to sleep and another to wake up	0
+train-7377	please set a reminder for me	0
+train-7379	create an alarm for me	0
+train-7380	set an alarm for lunch and another for dinner	0
+train-7385	have an alarm wake me at 10:30 am	0
+train-7386	i want an alarm to go off at 9 am	0
+train-7393	please create a new alarm for me	0
+train-7395	please set two alarms, one at 12 pm and the next at 1 pm	0
+train-7398	help me get up at eight thirty in the morning tomorrow	0
+train-10400	how many centimeters are in an inch	4
+train-10403	what amount of millimeters are in 50 kilometers	4
+train-10405	what amount of miles are in a hundred kilometers	4
+train-10408	what's 8 ounces in cups	4
+train-10410	how do you convert pounds to grams	4
+train-10412	what is 15 ounces in grams, please	4
+train-10413	what is 20 ounces in grams, please	4
+train-10414	what is 10 ounces in grams, please	4
+train-10416	how many kilos are in 25 pounds	4
+train-10420	how many kilos are in 100 pounds	4
+train-10425	what's 10 inches in centimeters and millimeters	4
+train-10430	what is 22 meters in inches	4
+train-10436	how do you convert inches to centimeters	4
+train-10439	if i have four inches, how many centimeters is that	4
+train-10440	how many centimeters are in 4 inches	4
+train-10442	what are four inches in centimeters	4
+train-10444	i need to know the conversion between tablespoons and teaspoons	4
+train-10446	what is the conversion between tablespoons and cups	4
+train-10452	what is the proper way to convert centimeters into inches	4
+train-10454	how many ounces are in a cup	4
+train-10455	how many teaspoons are in a half a cup	4
+train-10456	how many tablespoons are in three cups	4
+train-10457	how many pints are in four cups	4
+train-10458	how many quarts are in a gallon	4
+train-10462	what is the conversion for pints to quarts	4
+train-10464	what would five pounds be in kilos	4
+train-10468	please convert 2 inches into meters for me	4
+train-10469	how many meters are in 2 inches	4
+train-10473	how do i convert inches and centimeters	4
+train-10474	what is 2 inches in meters	4
+train-10478	is there an easy way to change feet into inches	4
+train-10480	how many feet are in 50 yards	4
+train-10481	how many ounces in a gallon	4
+train-10482	can you convert millimeters to centimeters	4
+train-10483	how many teaspoons in a cup	4
+train-10486	convert cm to inch	4
+train-10488	how can i change inches into meters	4
+train-10490	how do you convert feet to inches	4
+train-10492	how can you convert miles to kilometers	4
+train-10494	how would you convert yards to inches	4
+train-10810	what is the weather going to be like today	9
+train-10811	is it going to rain today	9
+train-10812	what is the weather going to be like tomorrow	9
+train-10815	is it snowing in the next two weeks	9
+train-10818	what is the record high temperature for today	9
+train-10821	what does the weather look like	9
+train-10822	what does the forecast look like	9
+train-10823	what is the weather going to be like	9
+train-10831	how is it outside	9
+train-10832	how hot will it be tomorrow	9
+train-10833	what is the weather for tomorrow in georgia	9
+train-10835	will it snow this weekend	9
+train-10838	how's the weather	9
+train-10839	what's the weather looking like	9
+train-10843	what is the weather report for costa mesa	9
+train-10846	i need meteorological data for tallahassee	9
+train-10849	tell me the weather report for tallahassee	9
+train-10851	what's the weekend forecast	9
+train-10854	what's the highest chance of rain for today	9
+train-10857	what is the weather outlook for seattle	9
+train-10859	how is the weather in seattle	9
+train-10862	what is miami weather like	9
+train-10867	give me a rundown of the weather	9
+train-10871	what is the high temperature for tomorrow	9
+train-10872	how many of inches of snow did my hometown get last year	9
+train-10875	is it cloudy or sunny in sparks	9
+train-10877	what is the weather like in sparks right now	9
+train-10879	when will it rain next	9
+train-10881	what will the weather be this weekend	9
+train-10883	tell me today's weather forecast	9
+train-10886	what will the weather be like	9
+train-10888	is there a uv or smog alert for tomorrow	9
+train-10890	what will the low temperatures be over the weekend	9
+train-10891	can you let me know if it will be warm this week	9
+train-10892	when is the next time it is suppose to rain	9
+train-10893	how cold will it be tomorrow	9
+train-10895	how much snow will we be getting tomorrow	9
+train-10896	what's the current weather	9
+train-10898	what's today's weather going to be	9
+train-10899	please tell me the weather forecast	9
+train-11701	spell potato	5
+train-11703	spell out potato	5
+train-11704	how do you spell tomato	5
+train-11710	what's the letters in 'you' word like	5
+train-11711	the word 'you' got how many letters	5
+train-11713	how do you spell out newspaper	5
+train-11715	how do you spell out espresso	5
+train-11717	can you spell "diatribe" for me	5
+train-11718	spell "requisite" for me	5
+train-11727	tell me how many p's are in apple	5
+train-11728	how many e's are in sesame	5
+train-11729	tell me how many a's are in magical	5
+train-11730	what is the proper way to spell diamond	5
+train-11734	can you tell me how to spell manipulation	5
+train-11735	what is the correct spelling of judgment	5
+train-11737	how do you spell antithesis	5
+train-11742	can you tell me how to spell elephant	5
+train-11743	how do you spell hotdog	5
+train-11745	spell government	5
+train-11749	how is the word acquaintance spelled	5
+train-11754	how do you spell mississippi	5
+train-11756	can you remind me how to spell because	5
+train-11758	i need to know how to spell xylophone	5
+train-11759	how do you spell guerrilla	5
+train-11763	i don't know how to spell threshold	5
+train-11764	i don't know how to spell circumference	5
+train-11766	i don't know how to spell mississippi	5
+train-11770	tell me how handkerchief is spelled	5
+train-11773	the word is happiness; how many a's can you find in that word	5
+train-11774	find all the "a"s in happiness	5
+train-11775	tell how many a's are in the word happiness	5
+train-11777	what is the correct spelling for antipathy	5
+train-11780	spell antipathy for me	5
+train-11785	i can't figure out how to spell superficial	5
+train-11786	what is the right way to spell superficial	5
+train-11787	how many es are in receiving	5
+train-11788	i don't know how to spell anethesia	5
+train-11789	i don't know how to spell malfeasance	5
+train-11795	how many ss are in narcissism	5
+train-11799	how man z's are in zombie	5

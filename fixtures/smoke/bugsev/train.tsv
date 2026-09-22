@@ -1,0 +1,401 @@
+id	text	label
+15098	Cannot read workbench state if all perspectives closed	2
+16045	Esc key doesn't close the About box	2
+16215	Errors during startup	2
+16694	Refactor->Extract Method does not generate method sig with [].	2
+18599	[CVS Decorator] Resource exception during CVS decoration	2
+18712	[Welcome] Copy not enabled on welcome page	2
+18760	[PropertiesView] Properties view: should rename Filter Properties	2
+19993	Not Present Exception when closing Editor	2
+15993	Icon missaligned	0
+32001	Plugin import - incorrectly grabs self-hosting plugins instead of Eclipse sdk ones	1
+39075	Source attachment path should be absolute	2
+35488	Could not create workspace	1
+49246	keyboard hangs/ mouse icon shape won't change	2
+50789	Need access to Internal CDT class CView	1
+53466	Deadlock due to nested acquires in UI thread	2
+53473	[EditorMgmt] Leak editor++ on open/close	2
+49531	TabItem doesn't work under QNX Photon	1
+79315	InternalParserUtil.createFileReader is returning null	2
+88795	[view contribution] Schema does not include parameter tag	2
+88453	[implementation] Should avoid explicit checks for IFileEditorInput	0
+92466	Injected disabled topic content in InjectionFilter must use document charset	2
+102123	Cancelling C/C++ Rename refactoring brings the machine to its knees	1
+118909	Problems with accents using SWT_AWT	2
+116403	Feature/Site project fails to export for a different platform	2
+150372	"Source not found" in Eclipse 3.2.0 + Callisto with latest cygwin 1.5.20-1	1
+102035	Register Window is not working with bitfield	1
+181061	[Viewers] JFace viewers performance issues in 3.3	2
+204662	org.eclipse.jdt.internal.compiler.parser.Parser.endParse throws NullPointerException	0
+229271	[WorkbenchLauncher] Splashscreen not updating	0
+233837	Problem with optional bundle resolution	2
+235666	TVT34: Moving through project properties makes file browser dialogs appear	2
+246804	Missing NLS message in org.eclipse.pde.internal.core.pderesources	2
+262609	Plug-ins tab combo unusable with default size on linux	2
+272750	[target] improve target provisioning	2
+287601	[DataBinding][Regression] NullpointerException if observables are disposed while masterdetail running	2
+36294	Parser fails on pointers to functions as parameters	1
+47684	JUnit log indicates errors in indexer/dependency service	1
+70136	Rename Makefile doesn't refresh in C/C++ Projects view	1
+79440	Building CDT via org.eclipse.cdt-feature fails	1
+81635	IllegalStateException when opening C File on Eclipse M4	2
+92299	Search Engine needs to take into account function signatures	1
+95224	[Open Definition] of destructor should have the same logic as constructors	1
+102376	Parser Errors in DOM with mingw	1
+110016	UI for watchpoints on local variables in CDT 3.0	1
+135236	Patch to fix problems with subclasses of CSourceLookupDirector not working	1
+147080	many java.lang.StackOverflowError in indexer	2
+147220	CDT does not emit proper CElementDelta when rename refactoring is done.	2
+149301	New C++ Class: "Namespace does not exist" warning	1
+155330	Inconsistent behavior of Open Definition	1
+156493	CElementAdapterFactory should not adapt ICElements to IProject	1
+177454	Make Target build fails to build subcomponents	2
+185876	Separate plugins for GDB-specific functionaliy.	1
+210351	Missing cdt.doc.isv files	2
+219798	Variables view shows address instead of value for C++ references	1
+234909	[Accessibility] Add Watchpoint dialog - input boxes do not provide a label	0
+245253	Compile error in PDOMCPPPointerToMemberType in cdt_5_0	1
+251124	C++ templates shouldn't be included into C New Project Wizard Tree	1
+252970	Syntax error annotation in editor on taking address of string literal	1
+264672	.api-description not part of core- and ui-plugin.	1
+267881	[launch] There is no possibility to configure remote protocol, host and port	1
+276604	Error parser translating WARNING as error	1
+281205	Colored Build output not working	1
+285877	Visibility of ContextMenu > Build Configurations should be bound to different nature	1
+312225	Need way to Clean All configurations in Workspace	1
+318794	Resizing of a property tab imposes a scrollbar on not related smaller one - those extending AbstractCPropertyTab (Includes , Discovery Options etc)	1
+320284	race condition on getProblemArgument	1
+325556	GDB 7.x MI thread details field ignored (DSF)	1
+326671	[Performance] MBS generated makefiles for static library projects add dependencies on referenced archives	1
+335547	Debugging not possible - error message: No source available for "ntdll!DbgUiConnectToDbg() "	2
+3877	Fields in installed JRE dialogs should not be bordered text (1GF0RD4)	1
+3937	Type Hierarchy should allow to create constructor (1GFAWR1)	0
+4126	SelectionDialog.setInitialSelection broken for all JDT dialogs (1GIRGYV)	1
+6848	Index out of range exception with New builder	1
+7224	Formatting splits package names in ugly ways	1
+8351	Organize imports tries to resolve local variables as Classes	1
+8476	JAR Packager: Make main class field editable	1
+12007	Source folder ending with .jar considered as JAR archive	1
+13658	Java Editor pref. page cannot reset font to workbench font	1
+13842	Add Task, Bookmark enabled for external files	1
+13995	AST: DCR: BodyDeclaration.getModifiers	1
+15377	Add: Add Method Breakpoint to the Debug menu	1
+15805	Refactoring Dialog can grow very big	1
+16781	Missing Working Set Icon	0
+18251	breakpoint with hit count configured disables the breakpoint after 1st hit	1
+19914	Overrides icons look weird when background isn't white [render] [general issue]	0
+20531	ArrayIndexOutOfBoundsException in conjunction with OutOfMemory Problems	2
+21868	No return statement for code with infinite loop	1
+24081	Todo preference should allow to disable without forgetting tags [dialogs]	1
+28005	Wrong indentation after class declaration	1
+28625	Huge number of warnings now generated by JDTCompilerAdapter	0
+29507	dialog in refactor->rename reapears	1
+29874	IllegalArgumentException on scrolling in java editor	1
+32907	"Organize imports" doesn't always remove unused import declarations [code manipulation]	0
+33172	Code assist shows repeated method names with inner classes	1
+35862	debugger: local variables unavailable	1
+36482	call hierarchy: need icons	1
+37131	[content assist] "Error accessing compilation unit" when using code assist for files not contained in a Java project	1
+39005	Should avoid reindexing entire project when reopened (rsc)	1
+40580	[navigation] Matching brace (CTRL+SHIFT+P) should work anywhere in the file	1
+40606	Unable to discard empty package if containing .class files	1
+41721	"Move Member type to New File" breaks on Inner class reference [refactoring]	1
+47407	Extract Interface: Dialog message should end with a dot [refactoring]	1
+49207	Badindentation and TAB key behavior after an opening parenthesis	1
+51116	Show built-in Formatter Preferences: Hint not enough	1
+51888	Code Generation Templates	1
+58436	AST Creation error: NPE in TypeBinding	1
+59704	Refactoring: Classes cannot be moved in other class [refactoring]	1
+60716	UI quirks in Semantic Highlighting preference page	0
+61286	StringOutOfBoundsException during NLS search	1
+62765	[breakpoints] Toggle class load breakpoint has no indicator	1
+66276	No plug-in: "org.eclipse.jdt.core" included at runtime.	2
+69923	[wizards] New Java Class has multiple mnemonics [code manipulation]	1
+70892	[1.5][Javadoc] Compiler should parse reference for inline tag @value	1
+75200	[Decorators] Color and Font decorators dissapear in Package Explorer	1
+75230	Java Compiler preferences page becomes unavailable after switch to and from project settings	1
+75330	create field when object used in expression creates bogus code	1
+77631	Move method can result in uncompilable code	1
+78592	[1.5][compiler] missing unchecked cast warning	1
+80123	Class<A<B>> literal problem	2
+91427	FIeldImpl could cache type() and typeName()	1
+92189	[refactor] [infer] NPE during Infer Type Arguments	1
+92349	Potential memory leak: CompletionEngine retained without active content assist	1
+98612	Scrapbook page does not see reexported plugins	1
+100367	no hierarchy for anonymous enums	1
+103147	"org.eclipse.jdt.internal.ui.text.JavaReconciler" [reproducible] [crash to desktop] [AMD64]	2
+117405	If a variable appears in more than one place in Variables view, then it isn't colored red when its value changes	1
+119439	Reformatting java source will indent <pre> tag in comment block by one space	1
+127239	BuildContext needs to be spec'ed	1
+128825	[navigation] Long pause and exceptions pressing Ctrl+O	1
+134645	[1.5][compiler] Java Compiler throws internal exception..	1
+135134	Duplicate Assert class	1
+138366	[navigation] Drop "Quick-Outline" (CTRL+O) in favour of "Open Structure" (CTRL+F3)	1
+148249	When Stepping, Debugger Loses State. Must Select Stack Frame of Thread to Resume.	2
+157907	[variables view] Preferences action should use PreferencesUtil to open pref pages	0
+161414	[package explorer] NPE from Packages Explorer on restart	1
+166186	Refactoring undo does not work if APT processor changes derived file	1
+176355	reserved variable JRE_LIB not updated when changing JRE	1
+195475	JDWP exit error	1
+200686	[templates] Error dialog when error in java context template evaluation shows no message	0
+207959	[1.5][compiler] secondary error upon broken parameter type	1
+209071	[1.5][compiler] Obvious type errors with generic types not caught at compile time	1
+232978	ASTRewrite leads to a weird result when adding a tag element on an empty @since tag	1
+247245	[generate constructor] Source -> Generate Constructors from Superclass does not add deprecated constructors regardless of whether they are selected.	1
+252521	VM Disconnection exception when program terminates with thread group turned on	1
+262040	[JUnit] JUnit classpath doesn't include all required bundles	1
+274965	[content assist] does not work for nested anonymous type	0
+289307	[infer type arguments] Refactoring incorrectly infers the generic type of a returned variable (recursive List<List<...>>)	1
+289426	24 compile warnings in official build	1
+291433	[1.5][compiler] Compile error (Cannot directly invoke the abstract method) in editor but source compiles outside the IDE. (I think it is also compiling in Eclipse but the editor still shows the error)	1
+296214	Autoimport of annotation package changes code semantics	1
+313943	[hovering] Java source hovers not readable using Ubuntu 10.04 (white-on-black tooltips)	1
+319436	[1.5][compiler] generic method with multiple types causes compile error	1
+334625	[jar exporter] Destination starting with '/' or '\' announced as being relative to the workspace	1
+339248	[inline] Inline method adds wrong casts for Collections.fill(*)	1
+343121	Quickfix on "Project 'A' is missing required Java project 'B'" where B is present but closed does not suggest reopening B	1
+18118	PDE launch tabs should contribute an image	1
+23726	Missing mnemonic in Plug-in Coee Generators page	1
+28628	NPE in Update Site editor Description tab	1
+29255	[Schema Editor] ArrayIndexOutOfBoundsException on Documentation page	1
+59818	Problem exporting a plugin with dot on the classpath	1
+61583	Build error based on update url definition	1
+65924	Performance of plugin.xml builder is slow	1
+67290	Showing lauch error details takes forever	1
+71850	NPE in ManifestEditor.computeInitialPageId(...)	1
+73820	Contextual launch for runtime workbench	1
+87271	Consistency of features should be checked	1
+96632	Refactoring with non java files (plugin.xml)	1
+102560	[3.1final] org.eclipse.pde.internal.build.FeatureWriter has compile errors	1
+134468	Accessing JAR Archive resource	1
+140949	PDE export ignores files with long path names	2
+153163	PDE generates invalid Manifests	1
+160523	[Compare] Changes needed to support file buffers	1
+181672	"Add to Java Search" should be on by default	1
+225433	Cannot ignore "the final keyword has been added"	1
+226128	More specific implementation of a super method should not be considered as an addition	1
+227361	'Api Errors/Warnings > Configure Workspace Settings...' leaves wrong shell active	1
+241875	Incorrect value guessed for unpack when selfhosting	1
+242612	Re-order compatibility options	1
+249721	[ds tooling] A <property> name that collides with a target property name should be considered an error	1
+262665	[target] Plug-in selection dialog should allow for filtering	1
+290393	Wrong equals check in PluginElement	0
+304260	[target] Migrating target 3.5 to 3.6 with two different include rules is broken	1
+325295	Classpath issues with swt fragments not being found	1
+337599	Binary plug-in import doesn't work when plug-in is already in host workspace as source	1
+337704	JSP Editor is not available in my Eclipse 20090920-1017	2
+2174	Selection is wrong when copying in Navigator (1GEX20W)	1
+2931	[Properties dialog] : Cannot tab from list into contents (1GKRYP0)	1
+4795	Performance: Synchronizer queue creation (1GITDM2)	1
+5039	IFile.create with force true does not handle case variants	1
+7711	Errors starting Eclipse when installed in a directory with Japanese characters	2
+8295	Ctrl-Space does not work for code assist in details pane	1
+9868	Combo.select() throws Exception when index is out of bounds	1
+11010	Thread created for every click in tableviewer	1
+13139	CoreException when starting workspace -> cvs.ui disabled	2
+13319	Customize Perspective: Scrollbar disabled because values disabled	1
+13562	Need better error logging	1
+13693	DefaultLabelProvider should provide a default (generic) image for IVariable	1
+14248	StyledText - optimizations when duplicate styles are set using setStyleRange	1
+14418	Aggressive activation of Synchronize fast view	1
+14581	Deadlock when entering release comment	1
+15155	Name of workbench plug-in should be "Workbench"	1
+15315	[Contributions] RetargetAction should set text of action handler	1
+15494	Eclipse unable to start after update manager activated	2
+15617	Reconciler configured a broken feature	1
+16283	Add from Local History items are unsorted	2
+16537	list of recent files should be in sub-menu	1
+18227	Clipped text in Text widget with SWT.MULTI set under Motif	1
+20018	CCombo missing keyboard access	1
+20580	[CVS Core] CoreExceptions wrapped poorly in a couple of places	1
+21470	What is the expected behavior after a power failure? Is there an auto save feature?	1
+23827	Order dependencies in Update	1
+24704	Tasks with the same name can be entered via the pref pages	1
+25345	[About] About dialog only shows Branded features	2
+25621	bin directory not excluded even if in .cvsignore	1
+26715	new URL("help:/***").openStream() returns null	1
+30324	NPE restoring shared launch config	1
+30389	Null pointer exception in AntView	1
+30964	Ant View forgets my all build files when a project is closed	0
+31528	InternalError creating patch	1
+32195	Multiple X windows systems cannot be installed at the same time	1
+32369	Double-clicking toolbar above content frame does not maximize	1
+32684	Copying broken linked resources fails: resource is out-of-sync	1
+32834	[RC1] Part 2, S.9: Was not able to disable the extension feature	1
+33411	GB18030: Can't launch Eclipse in a fold which name contains GB18030 characters	1
+34021	clicking "Available Updates" kills eclipse	2
+34115	[DOC] Log messages while searching help	1
+34666	[Bookmarks] copy should be tabular like Tasks view	1
+36312	natives do not implement internalCopyAttributes properly	1
+37317	Tooltip not always visible on toolbar buttons	1
+37909	[Workbench] Eclipse does not remember window positions on second display	1
+38302	An IProcess that returns null for getStreamsProxy generates 2 null pointer exceptions	1
+39519	[OpenModes] Right click on first file opens in single-click open mode	2
+39596	[Accessibility] Should inform user when there is no help for a control	1
+40663	Dragging views is not synchronised with mouse position	1
+42271	[KeyBindings] After File Search Navigation with Ctrl+. and Ctrl+, does not function	1
+42286	can not edit key binding under linux-gtk	1
+44110	crash in OS.gtk_tree_view_column_clear	1
+44301	SashForm - Sashes have no borders	1
+44599	deadlock renaming file	2
+46054	Refresh button in sync view doesn't refresh all projects	1
+47619	CVS Merge	1
+48891	Shutdown blocked by background activities	1
+50300	[Accessibility] Need to be fully Section 508 compliant on UNIX & Linux platforms.	1
+50362	get rid of all references to extensions.xml	1
+51079	Resizing of TableColumns on Linux displays extra horizontal toolbar	1
+51510	Able to add files to a version	1
+53294	I20040226: Launch config marked private showin in console and debug view	2
+53696	Failing Ant UI test: testMixedElement	1
+55617	WorkbenchFile(WorkbenchResource).testXMLProperty causes long timeout and ConnectException	1
+55646	[UI forms] ui.forms .project has unwanted project references	1
+55935	NoClassDefFoundError: org/eclipse/team/ui/synchronize/subscriber/SubscriberParticipant	1
+56506	[Preferences] Window/Preferences menu item missing "..." and in wrong menu?	1
+57744	NPE when closing the Java Editor	1
+59614	Clicking the CTabFolder chevron twice does not make the drop down go away	1
+61476	[Progress] Number of errors and warnings does not show anymore during a build	1
+63912	Cannot disconnect partially connected project	1
+64009	[projection] IllegalArgumentException ProjectionViewer.catchupWithProjectionAnnotationModel	1
+65120	[ActivityMgmt] triggering activity does not update view toolbar	1
+65371	Help Related error logs	1
+65510	DBCS: bogus at cvs view for Ant UTF-8 file with BOM	1
+66160	[Markers] [Tasks] New task addition does not specify Resource.	0
+66763	[projection] exception Index out of bounds from OverviewRuler.doPaint1	1
+66990	PopupInformationControl does not specify shell for handler	1
+68874	Error in Ant UI plugin.xml	1
+69362	[KeyBindings] registry: Cannot override old-syntax textEditorScope keybinding	1
+69829	TVT3.0: Tips and Tricks text in tables is right aligned.	1
+70977	[osgi] unable to run the platform using a non-admin user	1
+74299	GEF, EMF and VE discovery sites should be added to eclipse 3.0 features	1
+74470	[Decorators] Edited decorator is broken	1
+77153	SWT shell scripts override environment variables	1
+78470	[ViewMgmt] Problems when adding a part to a PartStack while the PartStack is in createControl()	2
+80722	[Sync View] Changes in sync view not updated on Change Sharing	1
+81427	Widget disposed error changing compare preference	1
+82854	[KeyBindings] performance: Large footprint on key classes	1
+82898	null pointer exception while browsing stack in debugger	1
+84786	Run in background preference lost	0
+85526	[Progress] Truncated labels not expanded when view is expanded	1
+86727	NPE from variables view with Ant properties	1
+87524	custom URLs not supported in osgi.debug	1
+88267	[doc] [API] Platform.asLocalURL javadoc incorrect	1
+89032	javadoc issues with contributions	1
+89349	[Preferences] Pref dialog tree's scrollbar has white space to the right of it	1
+90463	[SWT Examples - SWT Controls - Link] The Eclipse.org and SWT link does not work	1
+91255	Upgrade produces IOException when out of disk space	1
+93867	Update cannot discover features in a zipped site	1
+94432	Link widget with wrapped link: active area on wrong line	1
+94749	terminate all does not work	1
+95302	[CheatSheets] Error written to log concerning categoryID in org.eclipse.ui.cheatsheets	1
+97663	[Preferences] History buttons need an accessible listener	1
+98282	Wrapping has strange behavior for long Label with no spaces	1
+99798	[source lookup] SourceNotFound Dialog is not resizable	1
+100251	Selecting Browse button after entering a non-existent folder name in New Source/Header File wizard causes Eclipse to hang	1
+100607	need unrealized widgets to have size (0,0)	1
+102330	[Encoding] bogus warning when setting encoding back to default	1
+105008	TVT3.1: Eclipse doesn't honor flipped icons	2
+106332	Remove default update site entries when using local mirror via update policy	0
+109074	[Progress] Widget is disposed Exception in ProgressMonitorDialog.updateForSetBlocked	1
+109339	[Help] Key bindings don't always work from Linux	1
+109727	SWT Text control - method setOrientation is not working	2
+110031	[KeyBindings] misc: replacement for CommandEvent.haveKeySequenceBindingsChanged	1
+122743	ToggleBreakpointAction must implement IUpdate	1
+126622	[ViewMgmt] WorkbenchPage.resizeView is marked as experimental	1
+126701	update: not cancel but finish	0
+127577	[CheatSheet] Composite cheatsheet should remember where I was	1
+127979	backgroundimage bug in gnome	1
+132377	[Model Sync] Double-click expand to next diff	1
+134794	[CheatSheet] perform-when not working correctly	1
+135347	Copy package causes illegal arg exception	1
+135630	[Import/Export] wrong message in Export Prefs wizard	1
+136138	The history page needs to validate change	1
+138067	[Change Sets] Compare change sets not built right	1
+138480	Wrapped global toolbar does not appear	2
+140391	Unable to complete action for feature "Xxxx" due to errors.	1
+143870	Exception is thrown during Project.getDescription()	2
+144121	[Databindings] org.eclipse.jface.bindings.keys.Keystroke.getInstance throws IAE instead of ParseException	0
+144861	java exception at install updates	0
+145559	update plugins to use version 3.1.100.qualifier	2
+150934	[implementation] Crash after pasting long text in a text editor	1
+151444	[Perspectives] Arrow keys in Next Perspective (Ctrl-F8) dialog don't work properly	0
+153596	[Navigation] Structure Compare. How to go to Next/Previous structural change	1
+157268	crashes now and then, can't make sence of it	1
+157444	[Wizards] Project creation wizard should allow to select a working set	1
+158790	external browser can't be found on Redhat	1
+160366	[FieldAssist] DecoratedFields that have not yet been added decorations are misaligned	1
+163854	[SSH Connection] NPE from Jsch	1
+168515	Search view's open strategy is broken	1
+168608	[WorkbenchParts] Compiler warnings in N20061219-0080	1
+171403	[KeyBindings] Update NativeKeyFormatter to consider wpf port.	1
+171833	[Workbench] Use BundleEvents to narrow down starting state	1
+176239	ClassNotFoundException for ExportBuildListener when exporting plugin	1
+180774	No default menu action shown on Linux-GTK	1
+181418	[EditorMgmt] DBCS3.3: Unable to open files with non-registred external editors	1
+182126	No autobuild after workspace crash	1
+184409	Menu.getVisible() returns false on visible context menus	1
+186881	Unexpected error detected by HotSpot Virtual Machine SIGSEGV	2
+187137	[CommonNavigator] Project Explorer Link with Editor tooltip verbose and truncated	0
+187773	Allow variables in dictioniary path	1
+187878	FileDialog with MULTI has old look	1
+191611	NPE in FilteredItemsSelectionDialog	2
+191783	NullPointerException in FeatureDownloader	1
+192195	[Marker] Tasks doc needs new screenshots	1
+192718	Update tool does not work with HTTPS update sites	1
+198788	[keybindings] dont work when the internal [browser] is active editor	1
+200386	ResourceTree.java casts IProject to Project	1
+202406	Please designate Text.DELIMITER same as "line.separator" system property	1
+203424	[Trim] When trim minimised, the maximise button only does the restore	0
+204138	[SSH2] UI for SSH2 should be pushed down from CVS to jsch.	1
+204393	TitleAreaDialog's banner image has extraneous white borders	1
+206186	Debug view scrolls to the top unexpectedly	1
+212055	Equinox download page needs reference to archive site	1
+214707	Contributed launcher libraries copied to incorrect directory	1
+215517	include .log files from p2 build on download page	1
+219758	The second shell can not be active after closing the first shell	1
+220214	[Contributions] Menu contributions not added on wizard finish	1
+220456	[Markers] All Markers view filters only show problems	1
+221187	[Wizards] wizards with no pages should not display empty dialog	1
+221351	[DataBinding] DetailObservable(List|Set) and JavaBeanObservableSet should be modifiable	1
+221548	SWT.RESIZE carbon and win32 incompatibility	1
+225293	Can't override default project location when choosing Examples->Editing and Validating XML files	0
+226566	[Markers] "All Markers" View throws Exception	1
+229861	[UX] Table columns dialog needs "Apply"	1
+231056	[api] Removal of AnnotationBarHoverManager.Closer.stop(boolean) breaks binary compatibility	2
+237562	[Mozilla] mouse move events not sent on Leopard	2
+245690	[TabbedProperties] All tabs will be shown for ISelection instances not implementing IStructuredSelection	1
+248655	SWT.RESIZE style adds Min, Max and Close buttons to shell on SuSE Linux	1
+250286	Test build request for p2	1
+256081	[Net] Remove unnecessary API from IProxyData	0
+258682	[Browser] Add Google Chrome to the default list of browsers	1
+262904	[Edit] Copying changes from right to left overrides user's input when left is dirty	1
+263013	SocketTimeoutException while creating a servlet	1
+264206	Cannot click links in console	1
+265449	PropertySheetPage leaks PartListener	2
+266485	[ViewMgmt] PageSwitcher uses wrong parent when invoked from detached view	1
+267863	[block selection] line selection via line number ruler does not select whole line	1
+267895	StyledText block selection: cut & paste should give original text	1
+268097	[relengtool] map files should only be released after all projects have been tagged	1
+269121	JobManager deadlocks with UIJob (or any ASYNC_FINISH Job)	2
+269975	[ErrorHandling] StatusManager UI issues	1
+275123	NPE when quickly closing compare editor for local revision	1
+283029	Eclipse 322 crash after selecting a workspace in Red Hat Desktop 5 update 3	1
+283262	CVS core LogListener drops branch number	1
+284163	Using the ~ (tilde) results in an invalid location	1
+288361	[Browser] crashes with non-default mozilla installs on SPARC	1
+288468	[Widgets] Setup of event.detail argument incorrect in Tree paintItem event under Cocoa	1
+293108	Ant editor does not work with Remote System Explorer	1
+293870	[Coolbar] Combo box added to a toolbar is displayed with incorrect height.	1
+295176	cann't open menu item	1
+296920	[EditorMgmt] Exception when deleting project with open but not yet activated editors	1
+297637	[Help] org.eclipse.help.contentExtension does not work in a fragment of a help plugin	1
+302918	ToolItem setDisabledImage isn't used	1
+305216	[EditorMgmt] Focus lost when closing a dirty editor from the editor selection dialog	1
+310089	Clean up ImportTypeDialog.open() and CopyFilesAndFoldersOperation API	1
+310153	Allow people to use CSS in 3.x plugins	1
+323713	[DND] Drop affordance drawn in minimized stack but throws IAE when mouse button is released	1
+328873	Need enhanced pattern support for ignoring resources	1
+330299	Tree default selection event doesn't have item field set	1
+330872	[Annotate] Incorrect handling of lines with CR delimiter	1
+331522	[Expressions View] doesn't clear all relevant information if expression is broken	0
+333339	create/apply patch can't handle non-ascii characters. bad encoding -> no match	1
+339859	Infinite loop when copying files between projects using linked resources	1

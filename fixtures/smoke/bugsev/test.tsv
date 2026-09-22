@@ -1,0 +1,51 @@
+id	text	label
+30511	IPackageFragmentRoot:move ignores FORCE flag	2
+132961	[Help] DBCS3.2 Failed to show bookmark title in active help	1
+264104	Crash on Carbon while filtering preferences	2
+183341	[Project Model UI] Could we simplify the CPropertyPage/tab contribution?	1
+7031	Inspector is missing a toString area	1
+10921	Turn on J9 JIT	1
+24958	Hover shows code with indents	1
+51801	New Java project wizard is huge	1
+57957	JITC access violation while typing in JDT editor	1
+82337	M4 [refactoring]: move instance fails when caller is private: "Range of child edit lies outside of parent edit"	1
+99392	[refactoring] Use Supertype Where Possible... leaves dialog open	1
+103587	duplicate "do you want to build" messages	1
+126473	[Team Sync] React to rename of API in Team	1
+130683	NPE in DeltaProcessingState.addElementChangedListener()	1
+197481	[dnd] Refactoring script for copy folder generates 'null' folder	1
+205360	[compare] Can't restore members from local history	1
+218120	Compiler warnings in I20080206-1300	1
+276203	Ability to exclude bundles from launch configuration	1
+277357	Ben needs a pic on the committer page!	2
+294019	PDE/Build patch for Query changes	1
+329807	Compiler warnings in N20101108-2000 build	1
+6415	Down arrow should go to next file instead of beeping	1
+9405	Internal Error Synchonizing with Remote	1
+12058	JFace StyledTextContent implementation doesn't work well when the file is modified	1
+28094	[MPE] Ruler menu actions do not work on multi-page editor	1
+37026	[Working Sets] IWorkingSet.getImage should be getImageDescriptor	1
+42083	Find/Replace Dialog doesn't hold mouse focus during drag	0
+45966	hard crash	2
+53852	[Workbench] inconsist viewmanagement with maximized editors	1
+55651	[CommandMgmt] Press Del in Outline view, delete occurs in editor	1
+69338	Text compare CPU/Memory leak	2
+69822	ToolItem icons have a wrong background when disabled	0
+85023	remove empty .options files from build	1
+89801	Don't scale bars in performance summary graphs	1
+128920	[Help] Navigation -> Open External JavaDoc doesn't work in 3.2M5 when using an external web browser	1
+131996	Circular link for "Get started with Eclipse Project" on Callisto page	1
+139635	(RC3) Unable to focus table in CVS Editors view with keyboard	1
+139957	[Markers] Quick fix dialog problems custom dialog fonts	1
+141594	markerSupport is missing it's since 3.2 tag	1
+152309	Wrong "free size" calculation prevents installation of features	2
+172031	[preferences] TextEditors page can forget error state	1
+178666	checking out flags	1
+179049	[Edit] Comparing .txt files and then .java files from archives logs HandlerActivation conflicts	1
+215235	[CommonNavigator] project explorer can not show breakpoint working sets correctly	1
+233598	carriage return inserted twice when using text box in web browser	2
+252546	[Import/Export]Import project hangs when workspace location equals the project folder.	0
+284450	Javadoc corrections for ISynchronizationContext	0
+312341	TVT36:TCT213: CHS: English Strings Found	1
+319746	Move to J2SE-1.5 BREE	1
+325100	Tracker flashes whole screen on Windows 7	1

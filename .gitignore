@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.pass
+.DS_Store
+data/
+runs/
+vectors/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+HF_HOME/
+.cache/

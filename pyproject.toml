@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decision-systems-bakeoff"
+version = "0.1.0"
+description = "Reproduce Flybrain · Jev · Laya decision bakeoff on locked public rows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Decision Science Corp" }]
+dependencies = []
+
+[project.optional-dependencies]
+laya = []  # install ConvAI laya separately; version pins change often
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

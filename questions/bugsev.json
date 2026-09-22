@@ -1,0 +1,11 @@
+{
+  "severity": {
+    "type": "choice",
+    "instructions": "How severe is this bug, judging from the title alone?",
+    "criteria": {
+      "low": "trivial or minor",
+      "normal": "normal",
+      "high": "major, critical, or blocker"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+id	text	label
+29342	External tool variables expand diffently in different Main Tab fields	2
+107382	ClassCastException processing async thread queue	1
+265324	Deadlock with ILocks possible due to improper cleanup of ILocks not released when Job ends	2
+181144	[Project Model] NPE when selecting legacy project	1
+6682	Search in Hierarchy does not find Declarations in supers	1
+9846	No source lookup during debbing available in integration build 20020212	1
+23920	Cannot add a new JRE to the JRE preference page	1
+50844	AbortCompilation thrown from Name#resolveBinding()	1
+55171	NPE from RunToLineAdapter	1
+80919	[dom] IMethodBinding.overrides is wrong with initializer	1
+96799	Textual move cannot be undone [refactoring]	1
+99716	[5.0] [outline] filter "synthetic method" should be on per default	1
+121900	[call hierarchy] document positions not updated for call locations	1
+127628	[index] CodeAssist doesn't filter deprecated types	1
+194398	[compiler] Possible wrong bytecode generated for nested try-finally blocks: ret is part of more than one subroutine	1
+202158	NPE in org.eclipse.jdt.internal.debug.ui.JavaHotCodeReplaceListener.hotCodeReplaceFailed	1
+215808	[api tooling] incompatible 'added' methods for @noimplement type	1
+274514	Access policy on provisional API?	1
+286656	Plugins tab likes being the dirty button	1
+304669	'Export > Deployable Plug-ins > Install into host' fails	2
+335553	NPE in Declarative Services Component wizard	1
+5919	[View Mgmt] [article : Creating an Eclipse view] Focus problem	1
+9061	Walkback in CVS console	1
+11636	Should the IMenuManager Javadoc forbid implementing?	1
+20619	CVS: Changing ports (can't click finish)	0
+26902	GTK: mouse wheel doesn't work on the compare editor	1
+36169	[Perspectives] Unable to place View under TaskList using perspectiveExtension	1
+47979	Can't start eclipse after installing it (JVM 1.4.0_01 on Win2000)	2
+52642	Diff viewer does not show differences in line endings	1
+54753	remove ant ui's JDT dependency	1
+59639	Popup windows disappear on MouseOver when "Focus follows mouse" mouse behaviour used in WM.	0
+77828	Crash on opening HTML	2
+83015	Review the runtime compatibility changes	1
+88759	[osgi] standalone osgi never moves to the "started" state	1
+126705	[Preferences] FileFieldEditor does not call doCheckState	1
+129796	[Markers] Problems view filter configuration dialog has duplicate mnemonic 'v'	1
+136396	[Help] Search summary repeats document title	1
+137015	[CommonNavigator] Common Navigator Array Store Exception	1
+138077	[CheatSheet] Resetting a task in a composite cheat sheet which is being reviewed does not close the review panel	1
+157635	BIDI:StyledText Selection of text, and BIDI formating not correct	2
+167738	[Webapp] Toc view scrolls to the right when expanding	1
+173472	[StatusHandling] Dynamic tests for status handlers	1
+175097	[Viewers] CellLabelProvider#getToolTipImage() not working	1
+209214	[leopard] Illegible inline refactoring	1
+224687	SWTException on Mac 10.5	2
+229452	TVT34:TCT151: CDE: test mappings for IES 3.4 TVT	0
+246450	Can't find bundle for base name feature, locale en_AU	0
+306253	progress dialog flashes when copy or find from virtual views	1
+314805	Eclipse icon is duplicated in taskbar	1
+324751	[perfs] Regression on BenchFileStore#testStoreIsReadOnly()	1
