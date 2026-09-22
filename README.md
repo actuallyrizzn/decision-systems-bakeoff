@@ -313,7 +313,7 @@ python scripts/run_flybrain.py \
 | `lockfile.json` | Bakeoff id, arm definitions, per-task row counts + **test sha256** |
 | `configs/flybrain_best.json` | Locked Flybrain hyperparameters per task |
 | `questions/` | Frozen decision objects |
-| `src/decision_bakeoff/flybrain/` | Connectome + reservoir + ridge arm (AGPL) |
+| `src/decision_bakeoff/flybrain/` | Connectome + reservoir + ridge arm |
 | `docs/illustrations/` | Charts used in this README |
 | `scripts/run_arm.py` | Jev / Laya |
 | `scripts/run_flybrain.py` | Flybrain |
@@ -322,7 +322,7 @@ python scripts/run_flybrain.py \
 | `docs/FLYBRAIN.md` | Flybrain arm details |
 | `docs/FETCH_DATA.md` | Rebuild frozen corpora |
 | `docs/PUBLISHED_RESULTS.md` | Compact scoreboard mirror |
-| `LICENSING.md` | MIT harness vs AGPL flybrain vs CC-BY data |
+| `LICENSING.md` | AGPL code · CC-BY-SA docs · third-party notices |
 
 ### Honesty clauses (do not strip)
 
@@ -333,4 +333,4 @@ python scripts/run_flybrain.py \
 
 ### License
 
-Orchestration: MIT (see `LICENSE`). Flybrain package: AGPL-3.0-or-later. Connectome CSVs: CC-BY. Details: `LICENSING.md`. Datasets retain their upstream licences (see lockfile + `docs/FETCH_DATA.md`).
+**Code:** AGPL-3.0-or-later. **Documentation and other non-code:** CC-BY-SA-4.0. Pointer: `LICENSE`; detail: `LICENSING.md`; full texts: `licenses/`. Larva connectome CSVs remain upstream **CC-BY** (Winding et al.). Benchmark datasets retain their upstream licences (see lockfile + `docs/FETCH_DATA.md`).

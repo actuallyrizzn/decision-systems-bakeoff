@@ -44,7 +44,7 @@ python scripts/run_flybrain.py \
 ## Provenance
 
 - Body: Winding et al., *Science* 2023 larva connectome (CC-BY via Netzschleuder)  
-- Stack: vendored from [fly-cast](https://github.com/actuallyrizzn/fly-cast) jevlab / lab2 (AGPL — see `LICENSING.md`)  
+- Stack: vendored from [fly-cast](https://github.com/actuallyrizzn/fly-cast) jevlab / lab2 (this repo: AGPL code / CC-BY-SA docs — see `LICENSING.md`)  
 - Hardware reference for published ms: CPU laptop, no GPU  
 
 Do not describe a transformer fine-tune as “Flybrain” under bakeoff id `flybrain-jev-laya-2026-09`.

@@ -8,7 +8,7 @@ version = "0.2.0"
 description = "Reproduce Flybrain · Jev · Laya decision bakeoff on locked public rows"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT (orchestration); AGPL-3.0-or-later (flybrain package) — see LICENSING.md" }
+license = { text = "AGPL-3.0-or-later (code); CC-BY-SA-4.0 (docs/non-code) — see LICENSING.md" }
 authors = [{ name = "Decision Science Corp" }]
 dependencies = [
   "numpy>=1.24",

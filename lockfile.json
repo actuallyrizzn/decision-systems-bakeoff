@@ -22,7 +22,7 @@
       "body": "Winding et al. Science 2023 larva connectome",
       "training": "ridge_head_on_train_only_graph_frozen",
       "implementation": "src/decision_bakeoff/flybrain + scripts/run_flybrain.py; configs/flybrain_best.json",
-      "license": "AGPL-3.0-or-later (code); CC-BY (connectome CSVs)"
+      "license": "AGPL-3.0-or-later (this repo's code); connectome CSVs remain upstream CC-BY"
     }
   },
   "tasks": {
