@@ -32,17 +32,35 @@ class Head:
     sd: np.ndarray
 
 
-def standardize(x_train: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    mu = x_train.astype(np.float64).mean(axis=0)
-    sd = x_train.astype(np.float64).std(axis=0)
+def standardize(
+    x_train: np.ndarray, *, chunk: int = _CHUNK
+) -> tuple[np.ndarray, np.ndarray]:
+    """Column mean/std without materializing a full float64 copy (AG News OOM)."""
+    n, feat = int(x_train.shape[0]), int(x_train.shape[1])
+    if n == 0:
+        return np.zeros(feat, dtype=np.float64), np.ones(feat, dtype=np.float64)
+    total = np.zeros(feat, dtype=np.float64)
+    for start in range(0, n, chunk):
+        block = np.asarray(x_train[start : start + chunk], dtype=np.float64)
+        total += block.sum(axis=0)
+    mu = total / n
+    sq = np.zeros(feat, dtype=np.float64)
+    for start in range(0, n, chunk):
+        block = np.asarray(x_train[start : start + chunk], dtype=np.float64)
+        diff = block - mu
+        sq += np.einsum("ij,ij->j", diff, diff)
+    sd = np.sqrt(np.maximum(sq / n, 0.0))
     sd = np.maximum(sd, 1e-6)
     return mu, sd
 
 
 def _apply(x: np.ndarray, mu: np.ndarray, sd: np.ndarray) -> np.ndarray:
-    return (x.astype(np.float64) - mu) / sd
+    return (np.asarray(x, dtype=np.float64) - mu) / sd
 
 
+def _apply_chunk(x: np.ndarray, mu: np.ndarray, sd: np.ndarray) -> np.ndarray:
+    """Standardize a small block only (keeps peak RAM bounded)."""
+    return (np.asarray(x, dtype=np.float64) - mu) / sd
 def _softmax(logits: np.ndarray) -> np.ndarray:
     z = logits - logits.max(axis=1, keepdims=True)
     ex = np.exp(z)
@@ -76,16 +94,15 @@ def fit_ridge_classes(
     temperatures: tuple[float, ...] = (0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 6, 8),
     chunk: int = _CHUNK,
 ) -> tuple[Head, dict]:
-    mu, sd = standardize(x)
-    xs = _apply(x, mu, sd)
-    feat = xs.shape[1]
+    mu, sd = standardize(x, chunk=chunk)
+    feat = int(x.shape[1])
     gram = np.zeros((feat + 1, feat + 1), dtype=np.float64)
     xty = np.zeros((feat + 1, n_classes), dtype=np.float64)
     y = np.asarray(y, dtype=np.int64)
-    for start in range(0, len(xs), chunk):
-        block = xs[start : start + chunk]
+    for start in range(0, len(y), chunk):
+        block = _apply_chunk(x[start : start + chunk], mu, sd)
         target = y[start : start + chunk]
-        bias = np.concatenate([block, np.ones((len(block), 1))], axis=1)
+        bias = np.concatenate([block, np.ones((len(block), 1), dtype=np.float64)], axis=1)
         gram += bias.T @ bias
         for cls in range(n_classes):
             mask = target == cls
@@ -93,7 +110,7 @@ def fit_ridge_classes(
                 xty[:, cls] += bias[mask].sum(axis=0)
     eye = np.eye(feat + 1)
     eye[-1, -1] = 0.0
-    xv = _apply(x_valid, mu, sd)
+    xv = _apply_chunk(x_valid, mu, sd)
     yv = np.asarray(y_valid, dtype=np.int64)
     best: tuple[float, Head] | None = None
     for lam in ridges:

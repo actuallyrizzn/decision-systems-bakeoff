@@ -21,7 +21,9 @@ def pooled_states(
         return np.zeros((0, width), dtype=np.float32)
     order = sorted(range(len(seqs)), key=lambda i: len(seqs[i]), reverse=True)
     ordered = [seqs[i] for i in order]
-    blocks: list[np.ndarray] = []
+    width = res.n * (2 if pooling == "last+mean" else 1)
+    # Preallocate — avoid peak=2× from list-concat on large train (AG News).
+    ordered_out = np.empty((len(ordered), width), dtype=np.float32)
     for b0 in range(0, len(ordered), batch_lines):
         chunk = ordered[b0 : b0 + batch_lines]
         batch = len(chunk)
@@ -47,15 +49,15 @@ def pooled_states(
         last = state.T
         mean = (total / np.maximum(lens, 1)).T
         if pooling == "last":
-            blocks.append(last)
+            block = last
         elif pooling == "mean":
-            blocks.append(mean)
+            block = mean
         else:
-            blocks.append(np.concatenate([last, mean], axis=1))
-    out = np.concatenate(blocks, axis=0).astype(np.float32)
+            block = np.concatenate([last, mean], axis=1)
+        ordered_out[b0 : b0 + batch] = block
     inv = np.empty(len(order), dtype=np.int64)
     inv[np.asarray(order, dtype=np.int64)] = np.arange(len(order), dtype=np.int64)
-    return out[inv]
+    return ordered_out[inv]
 
 
 def encode_packets(

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gc
 import json
 import time
 from pathlib import Path
@@ -9,6 +10,7 @@ from typing import Any
 
 import numpy as np
 
+from decision_bakeoff.data import load_lockfile
 from decision_bakeoff.flybrain.features import encode_packets, pooled_states
 from decision_bakeoff.flybrain.readout import fit_ridge_classes, predict_proba
 from decision_bakeoff.flybrain.reservoir import build_reservoir_from_arm
@@ -88,14 +90,24 @@ def run_flybrain_task(
     train_seqs, _ = encode_packets(tok, train_texts, cap=cap)
     valid_seqs, _ = encode_packets(tok, valid_texts, cap=cap)
     test_seqs, trunc = encode_packets(tok, test_texts, cap=cap)
+    del train_texts, valid_texts, test_texts
+    gc.collect()
 
-    x_train = pooled_states(res, train_seqs, pooling=pooling)
-    x_valid = pooled_states(res, valid_seqs, pooling=pooling)
+    # Smaller batches on large trains (AG News ~115k) — cuts peak state buffers.
+    batch_lines = 128 if len(train_seqs) >= 50000 else 512
+    x_train = pooled_states(res, train_seqs, pooling=pooling, batch_lines=batch_lines)
+    del train_seqs
+    gc.collect()
+    x_valid = pooled_states(res, valid_seqs, pooling=pooling, batch_lines=batch_lines)
+    del valid_seqs
+    gc.collect()
 
     n_classes = int(y_train.max()) + 1
     head, fit_info = fit_ridge_classes(
         x_train, y_train, n_classes, x_valid=x_valid, y_valid=y_valid
     )
+    del x_train, x_valid, y_train, y_valid
+    gc.collect()
 
     # Per-row latency on test (rebuild features one-by-one is expensive;
     # measure batched then divide — also time each packet for median).
@@ -142,14 +154,22 @@ def run_flybrain_task(
     import statistics
 
     n = len(rows_out)
+    lock = load_lockfile()
     summary = {
         "arm": "flybrain",
+        "model": "flybrain-ridge",
         "task": task,
         "n_scored": n,
         "n_planned": n,
+        "finishability": 1.0 if n else 0.0,
+        "index_offset": 0,
         "accuracy": correct / n if n else None,
         "brier": sum(briars) / n if n else None,
         "median_seconds": float(statistics.median(latencies)) if latencies else None,
+        "input_tokens": None,
+        "output_tokens": None,
+        "usd": None,
+        "balance_usd_last": None,
         "cfg_key": arm["cfg_key"],
         "glove_coverage": coverage,
         "tokenizer_fingerprint": tok.fingerprint,
@@ -157,6 +177,8 @@ def run_flybrain_task(
         "packet_cap": cap,
         "test_truncated_fraction": trunc,
         "stopped": None,
+        "lockfile_bakeoff_id": lock.get("bakeoff_id"),
+        "lockfile_fair_id": lock.get("fair_bakeoff_id"),
     }
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / f"flybrain_{task}_summary.json").write_text(
