@@ -1,0 +1,60 @@
+{
+  "queue_id": "benchlab-queue-2026-09",
+  "policy": "Spare home CPU always has a next job. Pop highest priority_value node, run it at full fidelity, ingest into runs/matrix.db, mark done. Never run a node at reduced fidelity without noting fidelity in the cell.",
+  "nodes": [
+    {
+      "id": "banking77-native",
+      "kind": "new_task",
+      "task": "banking77",
+      "arms": ["jev", "laya", "julia", "flybrain"],
+      "status": "queued",
+      "priority_value": 9,
+      "why": "72-label real-world intent menu. Julia's card only published a top-16 shortlist workaround; native 72-way fills the known weak-case cell with their actual weights. Router needs to know where big-menu intent routing breaks per arm.",
+      "est_cost": "jev ~$0.40 at lockfile rates; others CPU-only",
+      "fidelity": "full test split"
+    },
+    {
+      "id": "massive-locales",
+      "kind": "extend_task",
+      "task": "massive_scenario",
+      "locales": ["pt-PT", "de-DE", "es-ES", "fr-FR", "hi-IN", "ja-JP"],
+      "arms": ["jev", "laya", "julia"],
+      "status": "queued",
+      "priority_value": 6,
+      "why": "Their card claims multilingual scenario strength; en-US already showed 87%->50% on wording. A few locales tells us if en was the outlier or the norm. Router cares: multilingual intent is real traffic.",
+      "est_cost": "CPU-heavy on ngram; run one locale at a time",
+      "fidelity": "full per-locale test split"
+    },
+    {
+      "id": "emotion-adjacent-affect",
+      "kind": "new_task",
+      "task": "affect_short_text",
+      "candidates": ["go_emotions-27", "crowdflower-text-emotion"],
+      "arms": ["jev", "laya", "julia", "flybrain"],
+      "status": "queued",
+      "priority_value": 8,
+      "why": "Julia's one clean win is 6-way affect on short text. Before the router reserves a Julia lane for mood, map where that lane edges end: 27-label GoEmotions and a noisier crowdsource set bound the specialty.",
+      "est_cost": "small; CPU + minor jev spend",
+      "fidelity": "full test split"
+    },
+    {
+      "id": "new-arm-watch",
+      "kind": "new_arm",
+      "status": "standing",
+      "priority_value": 7,
+      "why": "Every new open decision-model release gets the full existing bench battery cold. The matrix only stays honest if arms are added on release, not ad hoc.",
+      "on_trigger": "new open-weight decision model announcement",
+      "fidelity": "full"
+    },
+    {
+      "id": "fidelity-rerun-original-suite",
+      "kind": "rerun",
+      "task": "clinc150",
+      "arms": ["jev"],
+      "status": "queued",
+      "priority_value": 5,
+      "why": "Jev's CLINC150 cell is partial (4100/5500, hosted stop). A finished cell closes the last hole in the original board.",
+      "fidelity": "full"
+    }
+  ]
+}
