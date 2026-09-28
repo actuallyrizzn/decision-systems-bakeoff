@@ -45,6 +45,50 @@
       "pooling": "last+mean",
       "seed": 0,
       "cfg_key": "l0.5_s1_r0.7_i128_x0.5_plastmean_seed0"
+    },
+    "agnews": {
+      "leak": 0.3,
+      "steps": 2,
+      "radius": 0.7,
+      "inject_count": 128,
+      "input_scale": 0.5,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "provisional_fair_default_from_sst2",
+      "note": "Not validation-grid searched; provisional for fair suite"
+    },
+    "emotion": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "provisional_fair_default_from_clinc10",
+      "note": "Not validation-grid searched; provisional for fair suite"
+    },
+    "massive_scenario_en": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "provisional_fair_default_from_clinc10",
+      "note": "Not validation-grid searched; provisional for fair suite"
+    },
+    "typed_decisions": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "provisional_fair_typed_zeroshot_from_clinc10",
+      "note": "Typed has no train split — reservoir zero-shot cosine over menus; hypers provisional from clinc10"
     }
   }
 }
