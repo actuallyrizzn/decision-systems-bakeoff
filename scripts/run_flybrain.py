@@ -18,7 +18,19 @@ def main() -> int:
     ap.add_argument("--data", type=Path, required=True)
     ap.add_argument("--glove", type=Path, required=True, help="Path to glove.6B.100d.txt")
     ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--task", required=True, choices=["sst2", "clinc10", "clinc150", "bugsev"])
+    ap.add_argument(
+        "--task",
+        required=True,
+        choices=[
+            "sst2",
+            "clinc10",
+            "clinc150",
+            "bugsev",
+            "agnews",
+            "emotion",
+            "massive_scenario_en",
+        ],
+    )
     ap.add_argument("--cfg", type=Path, default=None, help="Override configs/flybrain_best.json")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--skip-verify", action="store_true", help="Dangerous; for smoke fixtures only")

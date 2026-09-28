@@ -1,0 +1,26 @@
+{
+  "scenario": {
+    "type": "choice",
+    "instructions": "Which scenario best matches this voice-assistant utterance?",
+    "criteria": {
+      "alarm": "Alarm and wake-up related requests",
+      "audio": "Audio volume or sound settings",
+      "calendar": "Calendar and scheduling",
+      "cooking": "Cooking and recipes",
+      "datetime": "Date or time questions",
+      "email": "Email reading or sending",
+      "general": "General or chit-chat",
+      "iot": "Smart-home / IoT device control",
+      "lists": "Lists and reminders of items",
+      "music": "Music playback or discovery",
+      "news": "News queries",
+      "play": "Play media, games, or radio",
+      "qa": "General knowledge questions",
+      "recommendation": "Recommendations",
+      "social": "Social media related",
+      "takeaway": "Food takeaway / delivery",
+      "transport": "Transport and travel",
+      "weather": "Weather queries"
+    }
+  }
+}

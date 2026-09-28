@@ -1,0 +1,12 @@
+{
+  "topic": {
+    "type": "choice",
+    "instructions": "Which news topic best fits this article?",
+    "criteria": {
+      "world": "World news and international affairs",
+      "sports": "Sports news",
+      "business": "Business and finance news",
+      "sci_tech": "Science and technology news"
+    }
+  }
+}

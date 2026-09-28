@@ -67,12 +67,15 @@ def verify_task_test(task: str, data_root: Path, lock: dict[str, Any] | None = N
     return got
 
 
+FAIR_INDEXED = ("agnews", "emotion", "massive_scenario_en", "clinc10", "clinc150")
+
+
 def gold_name(task: str, label: str, labels: list[str] | None) -> str:
     if task == "sst2":
         return SST2_GOLD[label]
     if task == "bugsev":
         return BUGSEV_GOLD[label]
-    if task in ("clinc10", "clinc150"):
+    if task in FAIR_INDEXED:
         assert labels is not None
         return labels[int(label)]
     raise ValueError(f"unknown task {task}")
@@ -99,7 +102,28 @@ def questions_for(task: str, labels: list[str] | None) -> tuple[dict[str, Any], 
                 "criteria": criteria,
             }
         }, "intent"
+    if task == "typed_decisions":
+        raise ValueError("typed_decisions uses per-case questions; see run_typed_decisions.py")
     path = QUESTIONS_DIR / f"{task}.json"
     obj = json.loads(path.read_text(encoding="utf-8"))
     qid = next(iter(obj))
+    # Prefer frozen labels.json order when present (massive / agnews / emotion).
+    if labels and qid in obj and isinstance(obj[qid].get("criteria"), dict):
+        crit = obj[qid]["criteria"]
+        missing = [n for n in labels if n not in crit]
+        if missing:
+            raise ValueError(f"{task} questions missing criteria for {missing}")
     return obj, qid
+
+
+def verify_typed_parquet(data_root: Path, lock: dict[str, Any] | None = None) -> str:
+    lock = lock or load_lockfile()
+    meta = lock["tasks"]["typed_decisions"]
+    path = data_root / "typed_decisions" / "test.parquet"
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    got = sha256_file(path)
+    want = meta["test_sha256"]
+    if got != want:
+        raise ValueError(f"REFUSE {path}: sha256 {got} != lockfile {want}")
+    return got

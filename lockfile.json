@@ -1,6 +1,8 @@
 {
   "bakeoff_id": "flybrain-jev-laya-2026-09",
+  "fair_bakeoff_id": "julia-fair-turf-2026-09",
   "title": "Same questions, three decision systems",
+  "fair_title": "Julia fair-turf rematch — AG News, Emotion, MASSIVE en scenario, typed-decisions",
   "kpis": ["accuracy", "brier", "median_seconds", "n_scored", "n_planned", "finishability"],
   "arms": {
     "jev": {
@@ -15,7 +17,7 @@
       "vendor": "ConvAI",
       "checkpoint": "convaiinnovations/laya",
       "training": "none_cold",
-      "notes": "English for short tasks; multilingual subfolder + max_len=4096/head_max_len=2048 for clinc150"
+      "notes": "English for short tasks; multilingual subfolder + max_len=4096/head_max_len=2048 for clinc150 / optional MASSIVE"
     },
     "flybrain": {
       "kind": "connectome_readout",
@@ -23,6 +25,23 @@
       "training": "ridge_head_on_train_only_graph_frozen",
       "implementation": "src/decision_bakeoff/flybrain + scripts/run_flybrain.py; configs/flybrain_best.json",
       "license": "AGPL-3.0-or-later (this repo's code); connectome CSVs remain upstream CC-BY"
+    },
+    "julia": {
+      "kind": "open_weight_decision",
+      "vendor": "Supersonic Labs",
+      "checkpoint": "SupersonicLabs/Julia-1",
+      "training": "none_cold",
+      "notes": "Native 2–20 options; fair suite stays within that limit"
+    }
+  },
+  "suites": {
+    "original": {
+      "tasks": ["sst2", "clinc10", "clinc150", "bugsev"],
+      "note": "Published Sept 2026 board; Julia cold arm weak here (see Doc #1423)"
+    },
+    "fair": {
+      "tasks": ["agnews", "emotion", "massive_scenario_en", "typed_decisions"],
+      "note": "Julia's claimed strengths — clear short menus + typed decisions. Flybrain skips typed_decisions."
     }
   },
   "tasks": {
@@ -31,34 +50,82 @@
       "test_sha256": "c5d4733f9738b084e064836d98a27c7ddedc9bd3d8571a39fffb2d30eedd4005",
       "qid": "sentiment",
       "source": "https://dl.fbaipublicfiles.com/glue/data/SST-2.zip",
-      "licence": "GLUE/SST-2, research use"
+      "licence": "GLUE/SST-2, research use",
+      "suite": "original"
     },
     "clinc10": {
       "rows_test": 300,
       "test_sha256": "a229dfd59e5254930cc1053af12057ea00b5ce306666dac002562c759deb97fe",
       "qid": "intent",
       "source": "https://raw.githubusercontent.com/clinc/oos-eval/master/data/data_full.json",
-      "licence": "CC-BY-3.0"
+      "licence": "CC-BY-3.0",
+      "suite": "original"
     },
     "clinc150": {
       "rows_test": 5500,
       "test_sha256": "a29710b72717f17a2514df8e9a5dfc5b37dbeb5ca1ee22f2b25fbd4a17918441",
       "qid": "intent",
       "source": "https://raw.githubusercontent.com/clinc/oos-eval/master/data/data_full.json",
-      "licence": "CC-BY-3.0"
+      "licence": "CC-BY-3.0",
+      "suite": "original"
     },
     "bugsev": {
       "rows_test": 2000,
       "test_sha256": "6715545ae7b01661bc1ff3bfafff476098061aedbd98832aeacf2972b9c023a6",
       "qid": "severity",
       "source": "https://github.com/ansymo/msr2013-bug_dataset",
-      "licence": "Cite Lamkanfi, Perez, Demeyer, MSR 2013 (no licence file in upstream)"
+      "licence": "Cite Lamkanfi, Perez, Demeyer, MSR 2013 (no licence file in upstream)",
+      "suite": "original"
+    },
+    "agnews": {
+      "rows_test": 7600,
+      "test_sha256": "ad6379db1a5750f522f58ae4ab7bd694599ef612c8bbde4234b0e7550d238557",
+      "qid": "topic",
+      "n_labels": 4,
+      "source": "https://huggingface.co/datasets/fancyzhx/ag_news",
+      "licence": "AG News (research); freeze via scripts/freeze_fair_bakeoff.py",
+      "suite": "fair",
+      "flybrain": true
+    },
+    "emotion": {
+      "rows_test": 2000,
+      "test_sha256": "6aef55abb9c7dd02e0ee76c9e8ad7dbb3050fe5c00fd0feb889d641ef850445f",
+      "qid": "emotion",
+      "n_labels": 6,
+      "source": "https://huggingface.co/datasets/dair-ai/emotion",
+      "licence": "CARER / dair-ai emotion (research)",
+      "suite": "fair",
+      "flybrain": true
+    },
+    "massive_scenario_en": {
+      "rows_test": 2974,
+      "test_sha256": "eb3bcfac06f1ec74117cddec8ed607895abb0cdc8bf40f7cd474374376c18809",
+      "qid": "scenario",
+      "n_labels": 18,
+      "source": "https://huggingface.co/datasets/mteb/amazon_massive_scenario (en locale)",
+      "licence": "MASSIVE / Amazon (see upstream)",
+      "suite": "fair",
+      "flybrain": true,
+      "notes": "en-US scenario only (18 labels ≤ Julia native max). Full 52-locale pass is optional follow-up."
+    },
+    "typed_decisions": {
+      "rows_test": 400,
+      "test_sha256": "4f294f218ea1da27f3efef936359389c62ea4d3973a41457732990f1d31b647c",
+      "qid": null,
+      "source": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions",
+      "revision": "c76749ec58bd8c3d2ea706b31c333a9059c38f90",
+      "licence": "See LocalLLaMA/typed-decisions card",
+      "suite": "fair",
+      "flybrain": false,
+      "format": "parquet_cases",
+      "notes": "400 cases / 2000 questions (choice 600, score 800, noul 600). Score with argmax probs per Julia harness."
     }
   },
   "jev_pricing": {
     "input_usd_per_mtok": 0.042,
     "output_usd_per_mtok": 0.0,
-    "usd_stop_default": 1.0
+    "usd_stop_default": 1.0,
+    "usd_stop_fair_default": 2.0
   },
   "published_reference": {
     "note": "Our Sept 2026 published scoreboard — optional target, not a pass criterion for a valid re-run.",

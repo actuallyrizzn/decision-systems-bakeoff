@@ -31,7 +31,19 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--data", type=Path, required=True, help="Data root containing <task>/test.tsv")
     ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--task", required=True, choices=["sst2", "clinc10", "clinc150", "bugsev"])
+    ap.add_argument(
+        "--task",
+        required=True,
+        choices=[
+            "sst2",
+            "clinc10",
+            "clinc150",
+            "bugsev",
+            "agnews",
+            "emotion",
+            "massive_scenario_en",
+        ],
+    )
     ap.add_argument("--arm", required=True, choices=["jev", "laya"])
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--start-at", type=int, default=0)
@@ -81,6 +93,7 @@ def main() -> int:
     briars: list[float] = []
     correct = 0
     input_tokens = 0
+    output_tokens = 0
     usd = 0.0
     stopped = None
     balance_usd = None
@@ -89,6 +102,7 @@ def main() -> int:
         state = row["text"]
         gold = gold_name(args.task, row["label"], labels)
         it = 0
+        ot = 0
         try:
             if args.arm == "jev":
                 assert api_key
@@ -103,7 +117,9 @@ def main() -> int:
                         pass
                 usage = payload.get("usage") or {}
                 it = int(usage.get("input_tokens") or 0)
+                ot = int(usage.get("output_tokens") or 0)
                 input_tokens += it
+                output_tokens += ot
                 usd = input_tokens * price / 1_000_000.0
                 if args.min_interval > 0:
                     time.sleep(args.min_interval)
@@ -131,6 +147,7 @@ def main() -> int:
                 "brier": br,
                 "seconds": elapsed,
                 "input_tokens": it if args.arm == "jev" else None,
+                "output_tokens": ot if args.arm == "jev" else None,
                 "probabilities": probs,
             }
         )
@@ -149,21 +166,26 @@ def main() -> int:
     n = len(results)
     import statistics
 
+    n_planned = len(subset)
     summary = {
         "arm": args.arm,
+        "model": "jev-latest" if args.arm == "jev" else "convaiinnovations/laya",
         "task": args.task,
         "n_scored": n,
-        "n_planned": len(subset),
+        "n_planned": n_planned,
+        "finishability": (n / n_planned) if n_planned else None,
         "index_offset": args.start_at,
         "accuracy": (correct / n) if n else None,
         "brier": (sum(briars) / n) if n else None,
         "median_seconds": float(statistics.median(latencies)) if latencies else None,
         "input_tokens": input_tokens if args.arm == "jev" else None,
+        "output_tokens": output_tokens if args.arm == "jev" else None,
         "usd": usd if args.arm == "jev" else None,
         "stopped": stopped,
         "balance_usd_last": balance_usd,
         "qid": qid,
         "lockfile_bakeoff_id": lock["bakeoff_id"],
+        "lockfile_fair_id": lock.get("fair_bakeoff_id"),
     }
     args.out.mkdir(parents=True, exist_ok=True)
     suffix = f"_from{args.start_at}" if args.start_at else ""

@@ -1,0 +1,14 @@
+{
+  "emotion": {
+    "type": "choice",
+    "instructions": "Which emotion does this tweet primarily express?",
+    "criteria": {
+      "sadness": "Sadness",
+      "joy": "Joy or happiness",
+      "love": "Love or affection",
+      "anger": "Anger",
+      "fear": "Fear",
+      "surprise": "Surprise"
+    }
+  }
+}

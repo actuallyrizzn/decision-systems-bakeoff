@@ -1,6 +1,8 @@
 # Same questions, three decision systems
 
-**Flybrain · Jev · Laya** — accuracy, sureness, and speed on four frozen public tests.
+**Flybrain · Jev · Laya · Julia** — accuracy, sureness, and speed on frozen public tests.
+
+**Two suites:** the original four (SST-2 / CLINC / bugsev — published board) and a **fair-turf rematch** aimed at Julia’s claimed strengths (AG News, Emotion, MASSIVE en scenario, typed-decisions). See [`docs/FAIR_BAKEOFF.md`](docs/FAIR_BAKEOFF.md).
 
 Sept 2026 · Decision Science Corp
 
