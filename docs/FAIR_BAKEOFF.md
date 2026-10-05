@@ -65,7 +65,14 @@ Same fidelity as the original suite (`run_arm.py` / Julia chain):
 - Flybrain configs for fair tasks are **provisional defaults** (not a fresh val grid).
 - MASSIVE here is **en scenario only**; full 52-locale is optional follow-up.
 
-## Narrative plan
+## Locked additions (2026-10-05)
+
+**Banking77** is now a sibling suite (`locked_additions` in `lockfile.json`):
+full 77 intents, public gold, **no shortlist**. Freeze with
+`scripts/freeze_banking77.py`. Julia is skipped (native max 20 options), same
+as clinc150. Flybrain uses a ridge head on train/val like the other TSV tasks.
+Decision Index is a separate official kit — never train or tune on it.
+
 
 1. Report original-suite Julia cold results (weak).
 2. Report fair-suite four-arm board.

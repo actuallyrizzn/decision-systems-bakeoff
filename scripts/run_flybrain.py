@@ -29,6 +29,7 @@ def main() -> int:
             "agnews",
             "emotion",
             "massive_scenario_en",
+            "banking77",
         ],
     )
     ap.add_argument("--cfg", type=Path, default=None, help="Override configs/flybrain_best.json")

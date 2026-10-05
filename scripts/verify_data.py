@@ -21,7 +21,7 @@ def main() -> int:
     ap.add_argument("--data", type=Path, required=True)
     ap.add_argument(
         "--suite",
-        choices=["all", "original", "fair"],
+        choices=["all", "original", "fair", "locked_additions"],
         default="all",
         help="Which lockfile suite to verify",
     )

@@ -67,7 +67,14 @@ def verify_task_test(task: str, data_root: Path, lock: dict[str, Any] | None = N
     return got
 
 
-FAIR_INDEXED = ("agnews", "emotion", "massive_scenario_en", "clinc10", "clinc150")
+FAIR_INDEXED = (
+    "agnews",
+    "emotion",
+    "massive_scenario_en",
+    "clinc10",
+    "clinc150",
+    "banking77",
+)
 
 
 def gold_name(task: str, label: str, labels: list[str] | None) -> str:
@@ -91,17 +98,23 @@ def class_names(task: str, labels: list[str] | None) -> list[str]:
 
 
 def questions_for(task: str, labels: list[str] | None) -> tuple[dict[str, Any], str]:
-    if task == "clinc150":
+    if task in ("clinc150", "banking77"):
         if not labels:
-            raise ValueError("clinc150 needs labels.json")
+            raise ValueError(f"{task} needs labels.json")
         criteria = {name: name for name in labels}
+        qid = "intent"
+        instructions = (
+            "Which banking intent does this customer message express?"
+            if task == "banking77"
+            else "Which of these intents does the utterance express?"
+        )
         return {
-            "intent": {
+            qid: {
                 "type": "choice",
-                "instructions": "Which of these intents does the utterance express?",
+                "instructions": instructions,
                 "criteria": criteria,
             }
-        }, "intent"
+        }, qid
     if task == "typed_decisions":
         raise ValueError("typed_decisions uses per-case questions; see run_typed_decisions.py")
     path = QUESTIONS_DIR / f"{task}.json"

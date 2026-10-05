@@ -42,6 +42,10 @@
     "fair": {
       "tasks": ["agnews", "emotion", "massive_scenario_en", "typed_decisions"],
       "note": "Julia's claimed strengths — clear short menus + typed decisions. Flybrain skips typed_decisions."
+    },
+    "locked_additions": {
+      "tasks": ["banking77"],
+      "note": "Mark 2026-10-05: full 77-way Banking77. Decision Index is a separate official kit, not this TSV freeze."
     }
   },
   "tasks": {
@@ -119,6 +123,18 @@
       "flybrain": false,
       "format": "parquet_cases",
       "notes": "400 cases / 2000 questions (choice 600, score 800, noul 600). Score with argmax probs per Julia harness."
+    },
+    "banking77": {
+      "rows_test": 3076,
+      "test_sha256": "372a21738c871fbd9d02783864b744d4fa525aadf694fbe2bcc131287f6a3926",
+      "qid": "intent",
+      "n_labels": 77,
+      "source": "https://huggingface.co/datasets/mteb/banking77",
+      "revision": "18072d2685ea682290f7b8924d94c62acc19c0b2",
+      "licence": "CC-BY-4.0 (PolyAI Banking77 via MTEB parquet)",
+      "suite": "locked_additions",
+      "flybrain": true,
+      "notes": "Full 77-way, no shortlist (Doc #1466 / #4846). mteb parquet test is 3076 rows. Valid = last 1003 of train. Julia native max 20 — skip this arm (same as clinc150)."
     }
   },
   "jev_pricing": {

@@ -79,6 +79,17 @@
       "cfg_key": "provisional_fair_default_from_clinc10",
       "note": "Not validation-grid searched; provisional for fair suite"
     },
+    "banking77": {
+      "leak": 0.3,
+      "steps": 4,
+      "radius": 0.9,
+      "inject_count": 128,
+      "input_scale": 2.0,
+      "pooling": "last+mean",
+      "seed": 0,
+      "cfg_key": "provisional_banking77_from_clinc150",
+      "note": "Same hypers as clinc150 (large intent menu); not a fresh val grid"
+    },
     "typed_decisions": {
       "leak": 0.3,
       "steps": 4,

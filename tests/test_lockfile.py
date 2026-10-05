@@ -23,6 +23,9 @@ def test_lockfile_tasks():
         "massive_scenario_en",
         "typed_decisions",
     }
+    assert lock["suites"]["locked_additions"]["tasks"] == ["banking77"]
+    assert lock["tasks"]["banking77"]["n_labels"] == 77
+    assert lock["tasks"]["banking77"]["rows_test"] == 3076
     for t in lock["suites"]["original"]["tasks"]:
         assert t in lock["tasks"]
     for t in lock["suites"]["fair"]["tasks"]:
@@ -44,3 +47,11 @@ def test_questions_fair():
     )
     assert qid == "emotion"
     assert len(q["emotion"]["criteria"]) == 6
+
+
+def test_questions_banking77():
+    labels = [f"intent_{i}" for i in range(77)]
+    q, qid = questions_for("banking77", labels)
+    assert qid == "intent"
+    assert len(q["intent"]["criteria"]) == 77
+    assert "shortlist" not in q["intent"]["instructions"].lower()

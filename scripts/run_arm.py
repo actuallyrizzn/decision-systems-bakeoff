@@ -42,6 +42,7 @@ def main() -> int:
             "agnews",
             "emotion",
             "massive_scenario_en",
+            "banking77",
         ],
     )
     ap.add_argument("--arm", required=True, choices=["jev", "laya"])
@@ -80,7 +81,7 @@ def main() -> int:
             return 2
     else:
         os.environ.setdefault("USE_TF", "0")
-        multilingual = args.task == "clinc150"
+        multilingual = args.task in ("clinc150", "banking77")
         laya = LayaArm(
             multilingual=multilingual,
             max_len=4096 if multilingual else None,

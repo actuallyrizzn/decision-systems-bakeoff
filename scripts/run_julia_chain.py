@@ -30,7 +30,7 @@ from decision_bakeoff.julia_arm import JuliaArm  # noqa: E402
 from decision_bakeoff.score import brier  # noqa: E402
 
 COMPATIBLE = ("sst2", "clinc10", "bugsev")
-EXCLUDED = ("clinc150",)
+EXCLUDED = ("clinc150", "banking77")
 
 
 def utc_now() -> str:
@@ -178,7 +178,7 @@ def main() -> int:
 
     tasks = [t.strip() for t in args.tasks.split(",") if t.strip()]
     for t in tasks:
-        if t in EXCLUDED or t == "clinc150":
+        if t in EXCLUDED or t in ("clinc150", "banking77"):
             raise SystemExit(
                 f"REFUSE task {t}: Julia native max 20 options; excluded from this arm"
             )
@@ -192,7 +192,7 @@ def main() -> int:
         "host_hint": "ngram",
         "tasks_planned": tasks,
         "tasks_excluded": list(EXCLUDED),
-        "exclude_reason": "Julia accepts at most 20 options per call; clinc150 has 151",
+        "exclude_reason": "Julia accepts at most 20 options per call; clinc150 has 151; banking77 has 77",
         "completed": [],
         "observable": {
             "status_json": str(args.status),
