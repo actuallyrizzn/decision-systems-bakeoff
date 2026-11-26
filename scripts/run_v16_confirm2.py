@@ -84,8 +84,10 @@ def main() -> int:
             c_cf, _ = apply_confuse_expanded(arm, state, criteria, c3, t3, p3)
             ch_conf = lex_v16[0][1] if lex_v16 else c_cf
             ch_v5 = lex_v16[0][1] if lex_v16 else c5
+            ch_r5safe = lex_v16[0][1] if lex_v16 else c_safe_r5
             hit["v16lex_else_confuse_x"] += int(ch_conf == gold)
             hit["v16lex_else_v5"] += int(ch_v5 == gold)
+            hit["v16lex_else_r5safe"] += int(ch_r5safe == gold)
 
             if lex_v16:
                 hub = lex_v16[0][1]
@@ -96,6 +98,7 @@ def main() -> int:
             fh.write(json.dumps({
                 "id": row["id"], "gold": gold, "instr_v2": c2, "force_lex_r5": c_r5,
                 "v16lex_else_confuse_x": ch_conf, "v16lex_else_v5": ch_v5,
+                "v16lex_else_r5safe": ch_r5safe,
                 "v16_lex_hit": lex_v16[0][1] if lex_v16 else None,
             }) + "\n")
             if n % 100 == 0:
